@@ -6,11 +6,11 @@ import java.util.Date;
 
 public class Course implements Serializable{
     /** 创建人 */
-    private String createdBy ;
+    private String CREATED_BY ;
     /** 创建时间 */
-    private Date createdTime ;
+    private Date CREATED_TIME ;
     /** 更新人 */
-    private String updatedBy ;
+    private String UPDATED_BY ;
     /** 更新时间 */
     private Date updatedTime ;
     /** 主键 */
@@ -32,28 +32,28 @@ public class Course implements Serializable{
     private String teacherAssistId ;
 
     /** 创建人 */
-    public String getCreatedBy(){
-        return this.createdBy;
+    public String getCREATED_BY(){
+        return this.CREATED_BY;
     }
     /** 创建人 */
-    public void setCreatedBy(String createdBy){
-        this.createdBy = createdBy;
+    public void setCREATED_BY(String CREATED_BY){
+        this.CREATED_BY = CREATED_BY;
     }
     /** 创建时间 */
-    public Date getCreatedTime(){
-        return this.createdTime;
+    public Date getCREATED_TIME(){
+        return this.CREATED_TIME;
     }
     /** 创建时间 */
-    public void setCreatedTime(Date createdTime){
-        this.createdTime = createdTime;
+    public void setCREATED_TIME(Date CREATED_TIME){
+        this.CREATED_TIME = CREATED_TIME;
     }
     /** 更新人 */
-    public String getUpdatedBy(){
-        return this.updatedBy;
+    public String getUPDATED_BY(){
+        return this.UPDATED_BY;
     }
     /** 更新人 */
-    public void setUpdatedBy(String updatedBy){
-        this.updatedBy = updatedBy;
+    public void setUPDATED_BY(String UPDATED_BY){
+        this.UPDATED_BY = UPDATED_BY;
     }
     /** 更新时间 */
     public Date getUpdatedTime(){

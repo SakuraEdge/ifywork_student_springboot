@@ -5,51 +5,51 @@ import java.util.Date;
 
 public class ClassCourse implements Serializable{
     /** 创建人 */
-    private String createdBy ;
+    private String CREATED_BY ;
     /** 创建时间 */
-    private Date createdTime ;
+    private Date CREATED_TIME ;
     /** 更新人 */
-    private String updatedBy ;
+    private String UPDATED_BY ;
     /** 更新时间 */
-    private Date updatedTime ;
+    private Date UPDATED_TIME ;
     /** 主键 */
     private Integer id ;
     /** 班级id;外键，连接class表id */
-    private Integer classId ;
+    private Integer CLASS_ID ;
     /** 课程id;外键，连接course表id */
-    private Integer courseId ;
+    private Integer COURSE_ID ;
 
     /** 创建人 */
-    public String getCreatedBy(){
-        return this.createdBy;
+    public String getCREATED_BY(){
+        return this.CREATED_BY;
     }
     /** 创建人 */
-    public void setCreatedBy(String createdBy){
-        this.createdBy = createdBy;
+    public void setCREATED_BY(String CREATED_BY){
+        this.CREATED_BY = CREATED_BY;
     }
     /** 创建时间 */
-    public Date getCreatedTime(){
-        return this.createdTime;
+    public Date getCREATED_TIME(){
+        return this.CREATED_TIME;
     }
     /** 创建时间 */
-    public void setCreatedTime(Date createdTime){
-        this.createdTime = createdTime;
+    public void setCREATED_TIME(Date CREATED_TIME){
+        this.CREATED_TIME = CREATED_TIME;
     }
     /** 更新人 */
-    public String getUpdatedBy(){
-        return this.updatedBy;
+    public String getUPDATED_BY(){
+        return this.UPDATED_BY;
     }
     /** 更新人 */
-    public void setUpdatedBy(String updatedBy){
-        this.updatedBy = updatedBy;
+    public void setUPDATED_BY(String UPDATED_BY){
+        this.UPDATED_BY = UPDATED_BY;
     }
     /** 更新时间 */
-    public Date getUpdatedTime(){
-        return this.updatedTime;
+    public Date getUPDATED_TIME(){
+        return this.UPDATED_TIME;
     }
     /** 更新时间 */
-    public void setUpdatedTime(Date updatedTime){
-        this.updatedTime = updatedTime;
+    public void setUPDATED_TIME(Date UPDATED_TIME){
+        this.UPDATED_TIME = UPDATED_TIME;
     }
     /** 主键 */
     public Integer getId(){
@@ -60,19 +60,19 @@ public class ClassCourse implements Serializable{
         this.id = id;
     }
     /** 班级id;外键，连接class表id */
-    public Integer getClassId(){
-        return this.classId;
+    public Integer getCLASS_ID(){
+        return this.CLASS_ID;
     }
     /** 班级id;外键，连接class表id */
-    public void setClassId(Integer classId){
-        this.classId = classId;
+    public void setCLASS_ID(Integer CLASS_ID){
+        this.CLASS_ID = CLASS_ID;
     }
     /** 课程id;外键，连接course表id */
-    public Integer getCourseId(){
-        return this.courseId;
+    public Integer getCOURSE_ID(){
+        return this.COURSE_ID;
     }
     /** 课程id;外键，连接course表id */
-    public void setCourseId(Integer courseId){
-        this.courseId = courseId;
+    public void setCOURSE_ID(Integer COURSE_ID){
+        this.COURSE_ID = COURSE_ID;
     }
 }
