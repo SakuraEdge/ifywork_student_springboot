@@ -24,6 +24,8 @@ public class Course implements Serializable{
      1-7|2|1-2,9-12|3|3-4
      表示该课程的上课时间为1到7周星期二的1到2节，和9到12周星期三的3到4节 */
     private String COURSE_TIME ;
+    /** 课程是否为线上课程 */
+    private String COURSE_ONLINE ;
     /** 上课地址 */
     private String COURSE_ADDRESS ;
     /** 主讲老师id;外键，连接user表id */
@@ -124,5 +126,13 @@ public class Course implements Serializable{
     /** 助教老师id;使用","分割 */
     public void setTEACHER_ASSIST_ID(String TEACHER_ASSIST_ID){
         this.TEACHER_ASSIST_ID = TEACHER_ASSIST_ID;
+    }
+
+    public String getCOURSE_ONLINE() {
+        return COURSE_ONLINE;
+    }
+
+    public void setCOURSE_ONLINE(String COURSE_ONLINE) {
+        this.COURSE_ONLINE = COURSE_ONLINE;
     }
 }
