@@ -12,11 +12,11 @@ import java.util.List;
 @Repository
 public interface TaskDao {
 
-    @Select("select * from task where T_CLASS_ID = #{cid} group by T_NAME")
-    List<Task> selectTaskByClassID(@Param("cid") String classID);
+    @Select("select * from task t,class c where c.CLASS_NAME = #{cname} group by T_NAME")
+    List<Task> selectTaskByClassName(@Param("cname") String className);
 
 
-    @Select("select * from task where T_STUDENT_ID = #{uid} where T_ACTIVE = '0'")
+    @Select("select * from task t,user u where u.U_ID = #{uid} and t.T_ACTIVE = '0' and u.ID = t.T_STUDENT_ID ")
     List<Task> selectStuNoTask(@Param("uid") String uid);
 
 }

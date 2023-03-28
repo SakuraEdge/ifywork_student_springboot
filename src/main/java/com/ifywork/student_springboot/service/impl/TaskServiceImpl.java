@@ -15,8 +15,8 @@ public class TaskServiceImpl implements TaskService {
     private TaskDao taskDao;
 
     @Override
-    public List<Task> selectTaskByClassID(String cid) {
-        return taskDao.selectTaskByClassID(cid);
+    public List<Task> selectTaskByClassName(String cname) {
+        return taskDao.selectTaskByClassName(cname);
     }
 
     @Override

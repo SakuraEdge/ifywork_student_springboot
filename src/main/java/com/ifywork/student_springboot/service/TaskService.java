@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TaskService {
 
-    List<Task> selectTaskByClassID(String cid);
+    List<Task> selectTaskByClassName(String cid);
 
     List<Task> selectStuNoTask(String uid);
 }

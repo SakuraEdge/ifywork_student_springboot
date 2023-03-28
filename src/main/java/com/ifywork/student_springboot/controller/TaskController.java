@@ -16,11 +16,11 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    @PostMapping("/selectTaskByClassID")
+    @PostMapping("/selectTaskByClassName")
     public CommonResp<List<Task>> selectTaskByClassID(@RequestBody Map<String,String> map){
-        String id = map.get("classID");
+        String name = map.get("className");
 
-        List<Task> list = taskService.selectTaskByClassID(id);
+        List<Task> list = taskService.selectTaskByClassName(name);
 
         CommonResp<List<Task>> commonResp = new CommonResp<>();
         commonResp.setResult(list);
@@ -40,6 +40,7 @@ public class TaskController {
         commonResp.setResult(list);
 
         return commonResp;
+
     }
 
 }
