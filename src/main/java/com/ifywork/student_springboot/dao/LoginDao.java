@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface LoginDao {
-    @Select("select * from user where uid = ${uid}")
+    @Select("select * from user where U_ID = ${uid}")
     User selectUserByUid(@Param("uid") String Uid);
 }
