@@ -5,164 +5,164 @@ import java.util.Date;
 
 public class TaskMutual implements Serializable{
     /** 创建人 */
-    private String createdBy ;
+    private String CREATED_BY ;
     /** 创建时间 */
-    private Date createdTime ;
+    private Date CREATED_TIME ;
     /** 更新人 */
-    private String updatedBy ;
+    private String UPDATED_BY ;
     /** 更新时间 */
-    private Date updatedTime ;
+    private Date UPDATED_TIME ;
     /** 主键 */
     private Integer id ;
     /** 任务id;外键，连接task表id */
-    private Integer tId ;
+    private Integer T_ID ;
     /** 互评人id一;外键，连接user表id */
-    private Integer studentId1 ;
+    private Integer STUDENT_ID1 ;
     /** 互评人id二;外键，连接user表id */
-    private Integer studentId2 ;
+    private Integer STUDENT_ID2 ;
     /** 互评人id三;外键，连接user表id */
-    private Integer studentId3 ;
+    private Integer STUDENT_ID3 ;
     /** 互评人id四;外键，连接user表id */
-    private Integer studentId4 ;
+    private Integer STUDENT_ID4 ;
     /** 互评人id五;外键，连接user表id */
-    private Integer studentId5 ;
+    private Integer STUDENT_ID5 ;
     /** 互评成绩一 */
-    private Integer mutualScore1 ;
+    private Integer MUTUAL_SCORE1 ;
     /** 互评成绩二 */
-    private Integer mutualScore2 ;
+    private Integer MUTUAL_SCORE2 ;
     /** 互评成绩三 */
-    private Integer mutualScore3 ;
+    private Integer MUTUAL_SCORE3 ;
     /** 互评成绩四 */
-    private Integer mutualScore4 ;
+    private Integer MUTUAL_SCORE4 ;
     /** 互评成绩五 */
-    private Integer mutualScore5 ;
+    private Integer MUTUAL_SCORE5 ;
 
     /** 创建人 */
-    public String getCreatedBy(){
-        return this.createdBy;
+    public String getCREATED_BY(){
+        return this.CREATED_BY;
     }
     /** 创建人 */
-    public void setCreatedBy(String createdBy){
-        this.createdBy = createdBy;
+    public void setCREATED_BY(String CREATED_BY){
+        this.CREATED_BY = CREATED_BY;
     }
     /** 创建时间 */
-    public Date getCreatedTime(){
-        return this.createdTime;
+    public Date getCREATED_TIME(){
+        return this.CREATED_TIME;
     }
     /** 创建时间 */
-    public void setCreatedTime(Date createdTime){
-        this.createdTime = createdTime;
+    public void setCREATED_TIME(Date CREATED_TIME){
+        this.CREATED_TIME = CREATED_TIME;
     }
     /** 更新人 */
-    public String getUpdatedBy(){
-        return this.updatedBy;
+    public String getUPDATED_BY(){
+        return this.UPDATED_BY;
     }
     /** 更新人 */
-    public void setUpdatedBy(String updatedBy){
-        this.updatedBy = updatedBy;
+    public void setUPDATED_BY(String UPDATED_BY){
+        this.UPDATED_BY = UPDATED_BY;
     }
     /** 更新时间 */
-    public Date getUpdatedTime(){
-        return this.updatedTime;
+    public Date getUPDATED_TIME(){
+        return this.UPDATED_TIME;
     }
     /** 更新时间 */
-    public void setUpdatedTime(Date updatedTime){
-        this.updatedTime = updatedTime;
+    public void setUPDATED_TIME(Date UPDATED_TIME){
+        this.UPDATED_TIME = UPDATED_TIME;
     }
     /** 主键 */
-    public Integer getId(){
+    public Integer geT_ID(){
         return this.id;
     }
     /** 主键 */
-    public void setId(Integer id){
+    public void seT_ID(Integer id){
         this.id = id;
     }
     /** 任务id;外键，连接task表id */
-    public Integer getTId(){
-        return this.tId;
+    public Integer getT_ID(){
+        return this.T_ID;
     }
     /** 任务id;外键，连接task表id */
-    public void setTId(Integer tId){
-        this.tId = tId;
+    public void setT_ID(Integer T_ID){
+        this.T_ID = T_ID;
     }
     /** 互评人id一;外键，连接user表id */
-    public Integer getStudentId1(){
-        return this.studentId1;
+    public Integer getSTUDENT_ID1(){
+        return this.STUDENT_ID1;
     }
     /** 互评人id一;外键，连接user表id */
-    public void setStudentId1(Integer studentId1){
-        this.studentId1 = studentId1;
+    public void setSTUDENT_ID1(Integer STUDENT_ID1){
+        this.STUDENT_ID1 = STUDENT_ID1;
     }
     /** 互评人id二;外键，连接user表id */
-    public Integer getStudentId2(){
-        return this.studentId2;
+    public Integer getSTUDENT_ID2(){
+        return this.STUDENT_ID2;
     }
     /** 互评人id二;外键，连接user表id */
-    public void setStudentId2(Integer studentId2){
-        this.studentId2 = studentId2;
+    public void setSTUDENT_ID2(Integer STUDENT_ID2){
+        this.STUDENT_ID2 = STUDENT_ID2;
     }
     /** 互评人id三;外键，连接user表id */
-    public Integer getStudentId3(){
-        return this.studentId3;
+    public Integer getSTUDENT_ID3(){
+        return this.STUDENT_ID3;
     }
     /** 互评人id三;外键，连接user表id */
-    public void setStudentId3(Integer studentId3){
-        this.studentId3 = studentId3;
+    public void setSTUDENT_ID3(Integer STUDENT_ID3){
+        this.STUDENT_ID3 = STUDENT_ID3;
     }
     /** 互评人id四;外键，连接user表id */
-    public Integer getStudentId4(){
-        return this.studentId4;
+    public Integer getSTUDENT_ID4(){
+        return this.STUDENT_ID4;
     }
     /** 互评人id四;外键，连接user表id */
-    public void setStudentId4(Integer studentId4){
-        this.studentId4 = studentId4;
+    public void setSTUDENT_ID4(Integer STUDENT_ID4){
+        this.STUDENT_ID4 = STUDENT_ID4;
     }
     /** 互评人id五;外键，连接user表id */
-    public Integer getStudentId5(){
-        return this.studentId5;
+    public Integer getSTUDENT_ID5(){
+        return this.STUDENT_ID5;
     }
     /** 互评人id五;外键，连接user表id */
-    public void setStudentId5(Integer studentId5){
-        this.studentId5 = studentId5;
+    public void setSTUDENT_ID5(Integer STUDENT_ID5){
+        this.STUDENT_ID5 = STUDENT_ID5;
     }
     /** 互评成绩一 */
-    public Integer getMutualScore1(){
-        return this.mutualScore1;
+    public Integer getMUTUAL_SCORE1(){
+        return this.MUTUAL_SCORE1;
     }
     /** 互评成绩一 */
-    public void setMutualScore1(Integer mutualScore1){
-        this.mutualScore1 = mutualScore1;
+    public void setMUTUAL_SCORE1(Integer MUTUAL_SCORE1){
+        this.MUTUAL_SCORE1 = MUTUAL_SCORE1;
     }
     /** 互评成绩二 */
-    public Integer getMutualScore2(){
-        return this.mutualScore2;
+    public Integer getMUTUAL_SCORE2(){
+        return this.MUTUAL_SCORE2;
     }
     /** 互评成绩二 */
-    public void setMutualScore2(Integer mutualScore2){
-        this.mutualScore2 = mutualScore2;
+    public void setMUTUAL_SCORE2(Integer MUTUAL_SCORE2){
+        this.MUTUAL_SCORE2 = MUTUAL_SCORE2;
     }
     /** 互评成绩三 */
-    public Integer getMutualScore3(){
-        return this.mutualScore3;
+    public Integer getMUTUAL_SCORE3(){
+        return this.MUTUAL_SCORE3;
     }
     /** 互评成绩三 */
-    public void setMutualScore3(Integer mutualScore3){
-        this.mutualScore3 = mutualScore3;
+    public void setMUTUAL_SCORE3(Integer MUTUAL_SCORE3){
+        this.MUTUAL_SCORE3 = MUTUAL_SCORE3;
     }
     /** 互评成绩四 */
-    public Integer getMutualScore4(){
-        return this.mutualScore4;
+    public Integer getMUTUAL_SCORE4(){
+        return this.MUTUAL_SCORE4;
     }
     /** 互评成绩四 */
-    public void setMutualScore4(Integer mutualScore4){
-        this.mutualScore4 = mutualScore4;
+    public void setMUTUAL_SCORE4(Integer MUTUAL_SCORE4){
+        this.MUTUAL_SCORE4 = MUTUAL_SCORE4;
     }
     /** 互评成绩五 */
-    public Integer getMutualScore5(){
-        return this.mutualScore5;
+    public Integer getMUTUAL_SCORE5(){
+        return this.MUTUAL_SCORE5;
     }
     /** 互评成绩五 */
-    public void setMutualScore5(Integer mutualScore5){
-        this.mutualScore5 = mutualScore5;
+    public void setMUTUAL_SCORE5(Integer MUTUAL_SCORE5){
+        this.MUTUAL_SCORE5 = MUTUAL_SCORE5;
     }
 }
