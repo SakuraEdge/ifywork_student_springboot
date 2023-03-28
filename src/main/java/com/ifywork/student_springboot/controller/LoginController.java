@@ -1,5 +1,8 @@
 package com.ifywork.student_springboot.controller;
 
+import com.ifywork.student_springboot.bean.User;
+import com.ifywork.student_springboot.service.LoginService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,16 +12,21 @@ import java.util.Map;
 @RestController
 public class LoginController {
 
+    @Autowired
+    private LoginService loginService;
 
-    @PostMapping("/login")
-    public CommonResp<String> login(@RequestBody Map<String,String> map){
-        String role = map.get("role");
+    @PostMapping("/selectUserByUid")
+    public CommonResp<User> login(@RequestBody Map<String,String> map){
+        String uid = map.get("uid");
 
-        CommonResp<String> commonResp = new CommonResp<>();
 
+        User user = loginService.selectUserByUid(uid);
+
+        CommonResp<User> commonResp = new CommonResp<>();
+        commonResp.setResult(user);
         commonResp.setCode(200);
-        commonResp.setMsg("我是超人强，越超人越强");
-        commonResp.setResult(role);
+        commonResp.setMsg("成功");
+
 
         return commonResp;
     }
