@@ -15,6 +15,11 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    /**
+     * 根据uid查询用户
+     * @param map uid
+     * @return User
+     */
     @PostMapping("/selectUserByUid")
     public CommonResp<User> selectUserByUid(@RequestBody Map<String,String> map){
         String uid = map.get("uid");
