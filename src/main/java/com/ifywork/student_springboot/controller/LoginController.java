@@ -16,7 +16,7 @@ public class LoginController {
     private LoginService loginService;
 
     @PostMapping("/selectUserByUid")
-    public CommonResp<User> login(@RequestBody Map<String,String> map){
+    public CommonResp<User> selectUserByUid(@RequestBody Map<String,String> map){
         String uid = map.get("uid");
 
 
@@ -28,6 +28,27 @@ public class LoginController {
         commonResp.setMsg("成功");
 
 
+        return commonResp;
+    }
+
+    @PostMapping("/checkUserLogin")
+    public CommonResp<User> checkUserLogin(@RequestBody Map<String,String> map){
+        String uid = map.get("uid");
+        String pwd = map.get("pwd");
+
+        User user = loginService.checkUser(uid,pwd);
+
+        CommonResp<User> commonResp = new CommonResp<>();
+        if (user != null){
+            commonResp.setCode(200);
+            commonResp.setResult(user);
+            commonResp.setMsg("登录成功！");
+        }
+        else {
+            commonResp.setCode(500);
+            commonResp.setResult(null);
+            commonResp.setMsg("登录失败！");
+        }
         return commonResp;
     }
 }

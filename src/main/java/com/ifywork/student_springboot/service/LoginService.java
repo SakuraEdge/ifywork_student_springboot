@@ -7,4 +7,6 @@ public interface LoginService {
 
 
     User selectUserByUid(String uid);
+
+    User checkUser(String uid,String pwd);
 }
