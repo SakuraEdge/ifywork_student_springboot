@@ -1,24 +1,24 @@
 package com.ifywork.student_springboot.service.impl;
 
 import com.ifywork.student_springboot.bean.User;
-import com.ifywork.student_springboot.dao.LoginDao;
-import com.ifywork.student_springboot.service.LoginService;
+import com.ifywork.student_springboot.dao.UserDao;
+import com.ifywork.student_springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoginServiceImpl implements LoginService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
-    private LoginDao loginDao;
+    private UserDao userDao;
 
     @Override
     public User selectUserByUid(String uid) {
-        return loginDao.selectUserByUid(uid);
+        return userDao.selectUserByUid(uid);
     }
 
     @Override
     public User checkUser(String uid, String pwd) {
-        return loginDao.checkUser(uid,pwd);
+        return userDao.checkUser(uid,pwd);
     }
 }

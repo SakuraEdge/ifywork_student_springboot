@@ -1,25 +1,27 @@
 package com.ifywork.student_springboot.controller;
 
 import com.ifywork.student_springboot.bean.User;
-import com.ifywork.student_springboot.service.LoginService;
+import com.ifywork.student_springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
 @RestController
-public class LoginController {
+@RequestMapping("/user")
+public class UserController {
 
     @Autowired
-    private LoginService loginService;
+    private UserService userService;
 
     @PostMapping("/selectUserByUid")
     public CommonResp<User> selectUserByUid(@RequestBody Map<String,String> map){
         String uid = map.get("uid");
 
-        User user = loginService.selectUserByUid(uid);
+        User user = userService.selectUserByUid(uid);
         CommonResp<User> commonResp = new CommonResp<>();
         commonResp.setResult(user);
         commonResp.setCode(200);
@@ -32,7 +34,7 @@ public class LoginController {
         String uid = map.get("uid");
         String pwd = map.get("pwd");
 
-        User user = loginService.checkUser(uid,pwd);
+        User user = userService.checkUser(uid,pwd);
 
         CommonResp<User> commonResp = new CommonResp<>();
         if (user != null){
