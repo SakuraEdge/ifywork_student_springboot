@@ -19,15 +19,11 @@ public class LoginController {
     public CommonResp<User> selectUserByUid(@RequestBody Map<String,String> map){
         String uid = map.get("uid");
 
-
         User user = loginService.selectUserByUid(uid);
-
         CommonResp<User> commonResp = new CommonResp<>();
         commonResp.setResult(user);
         commonResp.setCode(200);
         commonResp.setMsg("成功");
-
-
         return commonResp;
     }
 
