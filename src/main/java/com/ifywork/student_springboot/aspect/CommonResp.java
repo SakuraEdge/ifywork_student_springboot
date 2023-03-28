@@ -1,4 +1,4 @@
-package com.ifywork.student_springboot.controller;
+package com.ifywork.student_springboot.aspect;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
