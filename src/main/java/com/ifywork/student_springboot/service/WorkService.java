@@ -5,5 +5,5 @@ import java.util.Map;
 
 public interface WorkService {
     
-    List<Map<String,String>> selectStuNoWork(String uid);
+    List<Map<String,String>> selectStuWork(String uid);
 }
