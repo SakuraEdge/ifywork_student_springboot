@@ -29,7 +29,7 @@ public class TaskController {
         return commonResp;
     }
 
-    @PostMapping("/selectStuNoTask")
+    @PostMapping("/selectStuTask")
     public CommonResp<List<Task>> selectStuTask(@RequestBody Map<String,String> map){
         String id = map.get("uid");
 
@@ -40,7 +40,6 @@ public class TaskController {
         commonResp.setResult(list);
 
         return commonResp;
-
     }
 
 }
