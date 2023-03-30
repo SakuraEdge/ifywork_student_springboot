@@ -20,7 +20,7 @@ public class Task implements Serializable{
     /** 任务执行人id;外键，连接用户表user的ID主键 */
     private Integer T_STUDENT_ID ;
     /** 任务班级;外键，连接班级表class的ID主键 */
-    private Integer T_CLASS_ID ;
+    private Integer T_COURSE_ID ;
     /** 任务名称 */
     private String T_NAME ;
     /** 任务简介 */
@@ -110,14 +110,15 @@ public class Task implements Serializable{
     public void setTStudentUid(Integer T_STUDENT_ID){
         this.T_STUDENT_ID = T_STUDENT_ID;
     }
-    /** 任务班级;外键，连接班级表class的ID主键 */
-    public Integer getT_CLASS_ID(){
-        return this.T_CLASS_ID;
+
+    public Integer getT_COURSE_ID() {
+        return T_COURSE_ID;
     }
-    /** 任务班级;外键，连接班级表class的ID主键 */
-    public void setT_CLASS_ID(Integer T_CLASS_ID){
-        this.T_CLASS_ID = T_CLASS_ID;
+
+    public void setT_COURSE_ID(Integer t_COURSE_ID) {
+        T_COURSE_ID = t_COURSE_ID;
     }
+
     /** 任务名称 */
     public String getT_NAME(){
         return this.T_NAME;
