@@ -6,7 +6,9 @@ import com.ifywork.student_springboot.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class TaskServiceImpl implements TaskService {
@@ -20,7 +22,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> selectStuNoTask(String uid) {
-        return taskDao.selectStuNoTask(uid);
+    public List<Task> selectStuTask(String uid) {
+        return taskDao.selectStuTask(uid);
     }
+
 }

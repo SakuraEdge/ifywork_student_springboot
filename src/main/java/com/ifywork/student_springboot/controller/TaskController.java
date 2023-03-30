@@ -33,7 +33,7 @@ public class TaskController {
     public CommonResp<List<Task>> selectStuTask(@RequestBody Map<String,String> map){
         String id = map.get("uid");
 
-        List<Task> list = taskService.selectStuNoTask(id);
+        List<Task> list = taskService.selectStuTask(id);
 
         CommonResp<List<Task>> commonResp = new CommonResp<>();
         commonResp.setCode(200);

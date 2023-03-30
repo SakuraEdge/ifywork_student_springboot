@@ -8,5 +8,5 @@ public interface TaskService {
 
     List<Task> selectTaskByClassName(String cid);
 
-    List<Task> selectStuNoTask(String uid);
+    List<Task> selectStuTask(String uid);
 }

@@ -16,7 +16,7 @@ public interface TaskDao {
     List<Task> selectTaskByClassName(@Param("cname") String className);
 
 
-    @Select("select * from task t,user u where u.U_ID = #{uid} and t.T_ACTIVE = '0' and u.ID = t.T_STUDENT_ID ")
-    List<Task> selectStuNoTask(@Param("uid") String uid);
+    @Select("select * from task t,user u where u.U_ID = #{uid} and u.ID = t.T_STUDENT_ID ")
+    List<Task> selectStuTask(@Param("uid") String uid);
 
 }
