@@ -24,10 +24,9 @@ public class WorkServiceImpl implements WorkService {
     @Override
     public List<Map<String,String>> selectStuWork(String uid) {
         List<Task> list = taskService.selectStuTask(uid);
-        Map<String,String> map = new HashMap<>();
         List<Map<String,String>> list1 = new ArrayList<>();
         for (Task task:list) {
-            System.out.println(task.getT_NAME());
+            Map<String,String> map = new HashMap<>();
             map.put("t_name",task.getT_NAME());
 
             map.put("t_teacher_name",userDao.selectNameByUid(task.getT_TEACHER_ID()));
