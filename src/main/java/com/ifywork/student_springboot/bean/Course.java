@@ -1,5 +1,7 @@
 package com.ifywork.student_springboot.bean;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -27,12 +29,35 @@ public class Course implements Serializable{
     /** 课程是否为线上课程 */
     private String COURSE_ONLINE ;
     /** 上课地址 */
-    private String COURSE_ADDRESS ;
+    private int ADDRESS_ID ;
     /** 主讲老师id;外键，连接user表id */
     private String TEACHER_MAIN_ID ;
     /** 助教老师id;使用","分割 */
     private String TEACHER_ASSIST_ID ;
 
+    private String TERM;
+
+    private String YEAR;
+
+    private String DELETED;
+
+    private String CLASS_MAIN;
+
+    private Date START_TIME;
+
+    private Date END_TIME;
+
+    private int STUDENT_NUM;
+
+    private int COURSE_PERIOD;
+
+    private int IS_OPEN;
+
+    private String COURSE_STATUS;
+
+    private String DATA_SYN;
+
+    private String COURSE_CODE;
     /** 创建人 */
     public String getCREATED_BY(){
         return this.CREATED_BY;
@@ -103,14 +128,6 @@ public class Course implements Serializable{
     public void setCOURSE_TIME(String COURSE_TIME){
         this.COURSE_TIME = COURSE_TIME;
     }
-    /** 上课地址 */
-    public String getCOURSE_ADDRESS(){
-        return this.COURSE_ADDRESS;
-    }
-    /** 上课地址 */
-    public void setCOURSE_ADDRESS(String COURSE_ADDRESS){
-        this.COURSE_ADDRESS = COURSE_ADDRESS;
-    }
     /** 主讲老师id;外键，连接user表id */
     public String getTEACHER_MAIN_ID(){
         return this.TEACHER_MAIN_ID;
@@ -134,5 +151,109 @@ public class Course implements Serializable{
 
     public void setCOURSE_ONLINE(String COURSE_ONLINE) {
         this.COURSE_ONLINE = COURSE_ONLINE;
+    }
+
+    public int getADDRESS_ID() {
+        return ADDRESS_ID;
+    }
+
+    public void setADDRESS_ID(int ADDRESS_ID) {
+        this.ADDRESS_ID = ADDRESS_ID;
+    }
+
+    public String getTERM() {
+        return TERM;
+    }
+
+    public void setTERM(String TERM) {
+        this.TERM = TERM;
+    }
+
+    public String getYEAR() {
+        return YEAR;
+    }
+
+    public void setYEAR(String YEAR) {
+        this.YEAR = YEAR;
+    }
+
+    public String getDELETED() {
+        return DELETED;
+    }
+
+    public void setDELETED(String DELETED) {
+        this.DELETED = DELETED;
+    }
+
+    public String getCLASS_MAIN() {
+        return CLASS_MAIN;
+    }
+
+    public void setCLASS_MAIN(String CLASS_MAIN) {
+        this.CLASS_MAIN = CLASS_MAIN;
+    }
+
+    public Date getSTART_TIME() {
+        return START_TIME;
+    }
+
+    public void setSTART_TIME(Date START_TIME) {
+        this.START_TIME = START_TIME;
+    }
+
+    public Date getEND_TIME() {
+        return END_TIME;
+    }
+
+    public void setEND_TIME(Date END_TIME) {
+        this.END_TIME = END_TIME;
+    }
+
+    public int getSTUDENT_NUM() {
+        return STUDENT_NUM;
+    }
+
+    public void setSTUDENT_NUM(int STUDENT_NUM) {
+        this.STUDENT_NUM = STUDENT_NUM;
+    }
+
+    public int getCOURSE_PERIOD() {
+        return COURSE_PERIOD;
+    }
+
+    public void setCOURSE_PERIOD(int COURSE_PERIOD) {
+        this.COURSE_PERIOD = COURSE_PERIOD;
+    }
+
+    public int getIS_OPEN() {
+        return IS_OPEN;
+    }
+
+    public void setIS_OPEN(int IS_OPEN) {
+        this.IS_OPEN = IS_OPEN;
+    }
+
+    public String getCOURSE_STATUS() {
+        return COURSE_STATUS;
+    }
+
+    public void setCOURSE_STATUS(String COURSE_STATUS) {
+        this.COURSE_STATUS = COURSE_STATUS;
+    }
+
+    public String getDATA_SYN() {
+        return DATA_SYN;
+    }
+
+    public void setDATA_SYN(String DATA_SYN) {
+        this.DATA_SYN = DATA_SYN;
+    }
+
+    public String getCOURSE_CODE() {
+        return COURSE_CODE;
+    }
+
+    public void setCOURSE_CODE(String COURSE_CODE) {
+        this.COURSE_CODE = COURSE_CODE;
     }
 }
