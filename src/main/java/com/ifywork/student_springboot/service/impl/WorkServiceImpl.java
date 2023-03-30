@@ -2,6 +2,7 @@ package com.ifywork.student_springboot.service.impl;
 
 import com.ifywork.student_springboot.bean.Task;
 import com.ifywork.student_springboot.dao.ClassDao;
+import com.ifywork.student_springboot.dao.CourseDao;
 import com.ifywork.student_springboot.dao.UserDao;
 import com.ifywork.student_springboot.service.TaskService;
 import com.ifywork.student_springboot.service.WorkService;
@@ -19,7 +20,7 @@ public class WorkServiceImpl implements WorkService {
     @Autowired
     private UserDao userDao;
     @Autowired
-    private ClassDao classDao;
+    private CourseDao courseDao;
 
     @Override
     public List<Map<String,String>> selectStuWork(String uid) {
@@ -31,7 +32,7 @@ public class WorkServiceImpl implements WorkService {
 
             map.put("t_teacher_name",userDao.selectNameByUid(task.getT_TEACHER_ID()));
             map.put("t_student_name",userDao.selectNameByUid(task.getT_STUDENT_ID()));
-            map.put("class_name", classDao.selectClassNameByID(task.getT_CLASS_ID()));
+            map.put("course_name", courseDao.selectCourseNameByID(task.getT_CLASS_ID()));
 
             String active = task.getT_ACTIVE();
             if ("0".equals(active)){

@@ -20,7 +20,7 @@ public class WorkController {
     @Autowired
     private WorkService workService;
 
-    @PostMapping("/selectStuWork")
+    @PostMapping("/selectStuWorkInfo")
     public CommonResp<List<Map<String,String>>> selectUserByUid(@RequestBody Map<String,String> map){
         String uid = map.get("uid");
         List<Map<String,String>> list = workService.selectStuWork(uid);

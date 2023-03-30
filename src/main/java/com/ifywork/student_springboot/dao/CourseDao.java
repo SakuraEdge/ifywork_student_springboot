@@ -13,4 +13,7 @@ import java.util.List;
 public interface CourseDao {
     @Select("select * from course where id = (select course_id from class_course where class_id = ${id})")
     public List<Course> selectCourseByClassID(@Param("id") int id);
+
+    @Select("select COURSE_NAME from course where id = #{id}")
+    String selectCourseNameByID(@Param("id") int id);
 }

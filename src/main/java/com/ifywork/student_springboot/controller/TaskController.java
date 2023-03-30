@@ -16,9 +16,9 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    @PostMapping("/selectTaskByClassName")
+    @PostMapping("/selectTaskByCourseName")
     public CommonResp<List<Task>> selectTaskByClassID(@RequestBody Map<String,String> map){
-        String name = map.get("className");
+        String name = map.get("courseName");
 
         List<Task> list = taskService.selectTaskByClassName(name);
 
