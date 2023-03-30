@@ -19,6 +19,16 @@ public class ClassCourse implements Serializable{
     /** 课程id;外键，连接course表id */
     private Integer COURSE_ID ;
 
+    private String DELETED;
+
+    public String getDELETED() {
+        return DELETED;
+    }
+
+    public void setDELETED(String DELETED) {
+        this.DELETED = DELETED;
+    }
+
     /** 创建人 */
     public String getCREATED_BY(){
         return this.CREATED_BY;

@@ -40,6 +40,20 @@ public class Task implements Serializable{
     /** 自评打分 */
     private Integer T_SELF_SCORE ;
 
+    private String DELETED;
+
+    public void setT_STUDENT_ID(Integer t_STUDENT_ID) {
+        T_STUDENT_ID = t_STUDENT_ID;
+    }
+
+    public String getDELETED() {
+        return DELETED;
+    }
+
+    public void setDELETED(String DELETED) {
+        this.DELETED = DELETED;
+    }
+
     /** 创建人 */
     public String getCREATED_BY(){
         return this.CREATED_BY;

@@ -47,6 +47,16 @@ public class User implements Serializable{
      表示该用于处于ID分别为1，3，7的班级中 */
     private String U_CLASS ;
 
+    private String DELETED;
+
+    public String getDELETED() {
+        return DELETED;
+    }
+
+    public void setDELETED(String DELETED) {
+        this.DELETED = DELETED;
+    }
+
     /** 创建人 */
     public String getCREATED_BY(){
         return this.CREATED_BY;

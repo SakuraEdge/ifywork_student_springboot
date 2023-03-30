@@ -21,6 +21,20 @@ public class MyClass implements Serializable{
     /** 班级信息 */
     private String CLASS_INTRODUCE ;
 
+    private String CLASS_CODE;
+
+    private  int M_ID;
+
+    private  int O_ID;
+
+    private  int ADMISSION_TIME;
+
+    private  String EDUCATIONAL_SYSTEM;
+
+    private  String FLAG;
+
+    private String DELETED;
+
     /** 创建人 */
     public String getCREATED_BY(){
         return this.CREATED_BY;
@@ -84,5 +98,61 @@ public class MyClass implements Serializable{
     /** 班级信息 */
     public void setCLASS_INTRODUCE(String CLASS_INTRODUCE){
         this.CLASS_INTRODUCE = CLASS_INTRODUCE;
+    }
+
+    public String getCLASS_CODE() {
+        return CLASS_CODE;
+    }
+
+    public void setCLASS_CODE(String CLASS_CODE) {
+        this.CLASS_CODE = CLASS_CODE;
+    }
+
+    public int getM_ID() {
+        return M_ID;
+    }
+
+    public void setM_ID(int m_ID) {
+        M_ID = m_ID;
+    }
+
+    public int getO_ID() {
+        return O_ID;
+    }
+
+    public void setO_ID(int o_ID) {
+        O_ID = o_ID;
+    }
+
+    public int getADMISSION_TIME() {
+        return ADMISSION_TIME;
+    }
+
+    public void setADMISSION_TIME(int ADMISSION_TIME) {
+        this.ADMISSION_TIME = ADMISSION_TIME;
+    }
+
+    public String getEDUCATIONAL_SYSTEM() {
+        return EDUCATIONAL_SYSTEM;
+    }
+
+    public void setEDUCATIONAL_SYSTEM(String EDUCATIONAL_SYSTEM) {
+        this.EDUCATIONAL_SYSTEM = EDUCATIONAL_SYSTEM;
+    }
+
+    public String getFLAG() {
+        return FLAG;
+    }
+
+    public void setFLAG(String FLAG) {
+        this.FLAG = FLAG;
+    }
+
+    public String getDELETED() {
+        return DELETED;
+    }
+
+    public void setDELETED(String DELETED) {
+        this.DELETED = DELETED;
     }
 }

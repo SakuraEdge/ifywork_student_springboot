@@ -20,6 +20,16 @@ public class ClassStudent implements Serializable{
     /** 学生id;外键，连接user表id */
     private Integer STUDENT_ID ;
 
+    private String DELETED;
+
+    public String getDELETED() {
+        return DELETED;
+    }
+
+    public void setDELETED(String DELETED) {
+        this.DELETED = DELETED;
+    }
+
     /** 创建人 */
     public String getCREATED_BY(){
         return this.CREATED_BY;

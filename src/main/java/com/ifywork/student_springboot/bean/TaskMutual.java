@@ -37,6 +37,24 @@ public class TaskMutual implements Serializable{
     /** 互评成绩五 */
     private Integer MUTUAL_SCORE5 ;
 
+    private String DELETED;
+
+    public String getDELETED() {
+        return DELETED;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setDELETED(String DELETED) {
+        this.DELETED = DELETED;
+    }
+
     /** 创建人 */
     public String getCREATED_BY(){
         return this.CREATED_BY;
