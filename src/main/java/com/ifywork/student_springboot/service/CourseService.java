@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface CourseService {
 
-    public List<Course> selectStudentByStudentID(int id);
+    public List<Course> selectCourseByStudentID(int id);
 
-    public List<Course> selectStudentByClassID(int id);
+    public List<Course> selectCourseByClassID(int id);
+
+    public List<Course> selectCourseByStudentUID(String uid);
 }

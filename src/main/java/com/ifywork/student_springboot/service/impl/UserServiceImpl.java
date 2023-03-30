@@ -23,4 +23,9 @@ public class UserServiceImpl implements UserService {
         pwd = MD5Utils.getPWD(pwd);
         return userDao.checkUser(uid,pwd);
     }
+
+    @Override
+    public User selectUserByID(int id) {
+        return userDao.selectUserByID(id);
+    }
 }

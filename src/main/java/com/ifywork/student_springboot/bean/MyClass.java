@@ -25,8 +25,6 @@ public class MyClass implements Serializable{
 
     private  int M_ID;
 
-    private  int O_ID;
-
     private  int ADMISSION_TIME;
 
     private  String EDUCATIONAL_SYSTEM;
@@ -114,14 +112,6 @@ public class MyClass implements Serializable{
 
     public void setM_ID(int m_ID) {
         M_ID = m_ID;
-    }
-
-    public int getO_ID() {
-        return O_ID;
-    }
-
-    public void setO_ID(int o_ID) {
-        O_ID = o_ID;
     }
 
     public int getADMISSION_TIME() {
