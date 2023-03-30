@@ -12,6 +12,9 @@ public interface UserDao {
     @Select("select * from user where U_ID = #{uid}")
     User selectUserByUid(@Param("uid") String uid);
 
+    @Select("select * from user where ID = #{id}")
+    User selectUserByID(@Param("id") int id);
+
     @Select("select * from user where U_ID = #{uid} and U_PASSWORD = #{pwd}")
     User checkUser(@Param("uid") String uid, @Param("pwd") String pwd);
 

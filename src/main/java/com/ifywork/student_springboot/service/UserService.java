@@ -9,4 +9,6 @@ public interface UserService {
     User selectUserByUid(String uid);
 
     User checkUser(String uid,String pwd);
+
+    User selectUserByID(int id);
 }

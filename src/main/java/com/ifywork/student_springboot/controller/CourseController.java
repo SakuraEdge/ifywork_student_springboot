@@ -23,7 +23,7 @@ public class CourseController {
     public CommonResp<List<Course>> selectCourseByStudentID(@RequestBody Map<String,String> map){
         int id = Integer.parseInt(map.get("id"));
 
-        List<Course> courses = courseService.selectStudentByStudentID(id);
+        List<Course> courses = courseService.selectCourseByStudentID(id);
         CommonResp<List<Course>> commonResp = new CommonResp<>();
         commonResp.setResult(courses);
         commonResp.setCode(200);
@@ -35,7 +35,19 @@ public class CourseController {
     public CommonResp<List<Course>> selectCourseByClassID(@RequestBody Map<String,String> map){
         int id = Integer.parseInt(map.get("id"));
 
-        List<Course> courses = courseService.selectStudentByClassID(id);
+        List<Course> courses = courseService.selectCourseByClassID(id);
+        CommonResp<List<Course>> commonResp = new CommonResp<>();
+        commonResp.setResult(courses);
+        commonResp.setCode(200);
+        commonResp.setMsg("成功");
+        return commonResp;
+    }
+
+    @PostMapping("/selectCourseByStudentUID")
+    public CommonResp<List<Course>> selectCourseByStudentUID(@RequestBody Map<String,String> map){
+        String uid = map.get("uid");
+
+        List<Course> courses = courseService.selectCourseByStudentUID(uid);
         CommonResp<List<Course>> commonResp = new CommonResp<>();
         commonResp.setResult(courses);
         commonResp.setCode(200);
