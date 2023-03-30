@@ -21,9 +21,9 @@ public class WorkController {
     private WorkService workService;
 
     @PostMapping("/selectStuTaskInfo")
-    public CommonResp<List<Map<String,String>>> selectUserByUid(@RequestBody Map<String,String> map){
-        String uid = map.get("uid");
-        List<Map<String,String>> list = workService.selectStuWork(uid);
+    public CommonResp<List<Map<String,String>>> selectStuTaskInfo(@RequestBody Map<String,String> map){
+        String id = map.get("id");
+        List<Map<String,String>> list = workService.selectStuWork(id);
 
         CommonResp<List<Map<String,String>>> commonResp = new CommonResp<>();
         commonResp.setResult(list);

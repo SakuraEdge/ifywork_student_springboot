@@ -31,7 +31,7 @@ public class TaskController {
 
     @PostMapping("/selectStuTask")
     public CommonResp<List<Task>> selectStuTask(@RequestBody Map<String,String> map){
-        String id = map.get("uid");
+        String id = map.get("id");
 
         List<Task> list = taskService.selectStuTask(id);
 

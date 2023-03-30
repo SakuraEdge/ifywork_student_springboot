@@ -20,8 +20,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> selectStuTask(String uid) {
-        return taskDao.selectStuTask(uid);
+    public List<Task> selectStuTask(String id) {
+        return taskDao.selectStuTask(id);
     }
 
 }
