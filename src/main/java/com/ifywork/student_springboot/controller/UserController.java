@@ -1,6 +1,7 @@
 package com.ifywork.student_springboot.controller;
 
 import com.ifywork.student_springboot.aspect.CommonResp;
+import com.ifywork.student_springboot.aspect.DataIsNull;
 import com.ifywork.student_springboot.bean.User;
 import com.ifywork.student_springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,9 @@ public class UserController {
     @PostMapping("/selectUserByUid")
     public CommonResp<User> selectUserByUid(@RequestBody Map<String,String> map){
         String uid = map.get("uid");
-
         User user = userService.selectUserByUid(uid);
-        CommonResp<User> commonResp = new CommonResp<>();
-        commonResp.setResult(user);
-        commonResp.setCode(200);
-        commonResp.setMsg("成功");
-        return commonResp;
+        DataIsNull<User> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(user);
     }
 
     @PostMapping("/checkUserLogin")
