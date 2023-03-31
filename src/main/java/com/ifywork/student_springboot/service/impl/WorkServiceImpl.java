@@ -27,9 +27,6 @@ public class WorkServiceImpl implements WorkService {
     public List<Map<String,String>> selectStuWork(String id) {
         List<Task> list = taskService.selectStuTask(id);
         List<Map<String,String>> list1 = new ArrayList<>();
-        if (list == null){
-            return null;
-        }
         for (Task task:list) {
             Map<String,String> map = new HashMap<>();
             map.put("t_name",task.getT_NAME());
@@ -67,9 +64,6 @@ public class WorkServiceImpl implements WorkService {
     public List<Map<String,String>> selectMutualWork(String id){
         List<TaskMutual> list = taskService.selectStuMutual(id);
         List<Map<String,String>> list1 = new ArrayList<>();
-        if (list == null){
-            return null;
-        }
         for (TaskMutual mutual:list){
             Map<String,String> map = new HashMap<>();
             map.put("t_name",taskService.selectTaskNameByTaskID(mutual.getT_ID().toString()));

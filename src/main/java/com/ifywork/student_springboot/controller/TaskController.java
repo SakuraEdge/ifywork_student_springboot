@@ -24,7 +24,7 @@ public class TaskController {
 
         List<Task> list = taskService.selectTaskByClassName(name);
 
-        DataIsNull<List<Task>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Task> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(list);
     }
 
@@ -34,7 +34,7 @@ public class TaskController {
 
         List<Task> list = taskService.selectStuTask(id);
 
-        DataIsNull<List<Task>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Task> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(list);
     }
 

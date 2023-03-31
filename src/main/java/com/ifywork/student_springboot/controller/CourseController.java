@@ -25,7 +25,7 @@ public class CourseController {
         int id = Integer.parseInt(map.get("id"));
 
         List<Course> courses = courseService.selectCourseByStudentID(id);
-        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Course> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(courses);
     }
 
@@ -34,7 +34,7 @@ public class CourseController {
         int id = Integer.parseInt(map.get("id"));
 
         List<Course> courses = courseService.selectCourseByClassID(id);
-        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Course> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(courses);
     }
 
@@ -44,7 +44,7 @@ public class CourseController {
 
         List<Course> courses = courseService.selectCourseByStudentUID(uid);
 
-        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Course> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(courses);
     }
 
@@ -56,7 +56,7 @@ public class CourseController {
 
         List<Course> courses = courseService.selectCourseByTermAndYear(id,term,year);
 
-        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Course> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(courses);
     }
 
@@ -67,7 +67,7 @@ public class CourseController {
 
         List<Course> courses = courseService.selectCourseByWord(id,word);
 
-        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Course> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(courses);
     }
 }

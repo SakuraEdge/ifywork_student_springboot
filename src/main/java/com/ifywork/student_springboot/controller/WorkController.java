@@ -25,7 +25,7 @@ public class WorkController {
     public CommonResp<List<Map<String,String>>> selectStuTaskInfo(@RequestBody Map<String,String> map){
         String id = map.get("id");
         List<Map<String,String>> list = workService.selectStuWork(id);
-        DataIsNull<List<Map<String,String>>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Map<String,String>> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(list);
     }
 
@@ -33,7 +33,7 @@ public class WorkController {
     public CommonResp<List<Map<String,String>>> selectMutualInfo(@RequestBody Map<String,String> map){
         String id = map.get("id");
         List<Map<String,String>> list = workService.selectMutualWork(id);
-        DataIsNull<List<Map<String,String>>> dataIsNull = new DataIsNull<>();
+        DataIsNull<Map<String,String>> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(list);
     }
 

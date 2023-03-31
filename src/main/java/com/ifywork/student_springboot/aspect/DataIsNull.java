@@ -9,11 +9,16 @@ import java.util.Map;
  */
 public class DataIsNull<T> {
 
-    public CommonResp<T> listIsNull(T list) {
-        CommonResp<T> commonResp = new CommonResp<>();
+    /**
+     * 查询列表类型是否为空值
+     * 非列表类型使用noIsNull方法
+     */
+    public CommonResp<List<T>> listIsNull(List<T> list) {
+        CommonResp<List<T>> commonResp = new CommonResp<>();
         commonResp.setResult(list);
-        if (list==null){
+        if (list == null || list.size() == 0){
             commonResp.setCode(300);
+            commonResp.setResult(null);
             commonResp.setMsg("没有数据");
         }
         else {
@@ -22,4 +27,25 @@ public class DataIsNull<T> {
         }
         return commonResp;
     }
+
+    /**
+     * 查询非列表类型是否为空值
+     * 列表类型使用listIsNull方法
+     */
+    public CommonResp<T> noIsNull(T data){
+        CommonResp<T> commonResp = new CommonResp<>();
+        commonResp.setResult(data);
+        if (data == null || data == ""){
+            commonResp.setCode(300);
+            commonResp.setResult(null);
+            commonResp.setMsg("没有数据");
+        }
+        else {
+            commonResp.setCode(200);
+            commonResp.setMsg("成功");
+        }
+        return commonResp;
+    }
+
+
 }

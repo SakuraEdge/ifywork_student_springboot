@@ -33,7 +33,7 @@ public class ClassController {
 
         List<MyClass> myClass = classService.selectClassByStudentID(id);
 
-        DataIsNull<List<MyClass>> dataIsNull = new DataIsNull<>();
+        DataIsNull<MyClass> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(myClass);
     }
 }

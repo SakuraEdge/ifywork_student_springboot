@@ -29,7 +29,7 @@ public class UserController {
         String uid = map.get("uid");
         User user = userService.selectUserByUid(uid);
         DataIsNull<User> dataIsNull = new DataIsNull<>();
-        return dataIsNull.listIsNull(user);
+        return dataIsNull.noIsNull(user);
     }
 
     @PostMapping("/checkUserLogin")
