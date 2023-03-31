@@ -23,15 +23,15 @@ public class WorkServiceImpl implements WorkService {
     private CourseDao courseDao;
 
     @Override
-    public List<Map<String,String>> selectStuWork(String uid) {
-        List<Task> list = taskService.selectStuTask(uid);
+    public List<Map<String,String>> selectStuWork(String id) {
+        List<Task> list = taskService.selectStuTask(id);
         List<Map<String,String>> list1 = new ArrayList<>();
         for (Task task:list) {
             Map<String,String> map = new HashMap<>();
             map.put("t_name",task.getT_NAME());
 
-            map.put("t_teacher_name",userDao.selectNameByUid(task.getT_TEACHER_ID()));
-            map.put("t_student_name",userDao.selectNameByUid(task.getT_STUDENT_ID()));
+            map.put("t_teacher_name",userDao.selectNameById(task.getT_TEACHER_ID()));
+            map.put("t_student_name",userDao.selectNameById(task.getT_STUDENT_ID()));
             map.put("course_name", courseDao.selectCourseNameByID(task.getT_COURSE_ID()));
 
             String active = task.getT_ACTIVE();
