@@ -32,7 +32,7 @@ public class WorkServiceImpl implements WorkService {
 
             map.put("t_teacher_name",userDao.selectNameById(task.getT_TEACHER_ID()));
             map.put("t_student_name",userDao.selectNameById(task.getT_STUDENT_ID()));
-            map.put("course_name", courseDao.selectCourseNameByID(task.getT_CLASS_ID()));
+            map.put("course_name", courseDao.selectCourseNameByID(task.getT_COURSE_ID()));
 
             String active = task.getT_ACTIVE();
             if ("0".equals(active)){
