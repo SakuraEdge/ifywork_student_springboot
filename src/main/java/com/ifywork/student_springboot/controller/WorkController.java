@@ -1,6 +1,7 @@
 package com.ifywork.student_springboot.controller;
 
 import com.ifywork.student_springboot.aspect.CommonResp;
+import com.ifywork.student_springboot.aspect.DataIsNull;
 import com.ifywork.student_springboot.bean.User;
 import com.ifywork.student_springboot.service.UserService;
 import com.ifywork.student_springboot.service.WorkService;
@@ -24,11 +25,16 @@ public class WorkController {
     public CommonResp<List<Map<String,String>>> selectStuTaskInfo(@RequestBody Map<String,String> map){
         String id = map.get("id");
         List<Map<String,String>> list = workService.selectStuWork(id);
-
-        CommonResp<List<Map<String,String>>> commonResp = new CommonResp<>();
-        commonResp.setResult(list);
-        commonResp.setCode(200);
-        commonResp.setMsg("成功");
-        return commonResp;
+        DataIsNull<List<Map<String,String>>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(list);
     }
+
+    @PostMapping("/selectMutualInfo")
+    public CommonResp<List<Map<String,String>>> selectMutualInfo(@RequestBody Map<String,String> map){
+        String id = map.get("id");
+        List<Map<String,String>> list = workService.selectMutualWork(id);
+        DataIsNull<List<Map<String,String>>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(list);
+    }
+
 }

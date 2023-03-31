@@ -1,6 +1,7 @@
 package com.ifywork.student_springboot.service.impl;
 
 import com.ifywork.student_springboot.bean.Task;
+import com.ifywork.student_springboot.bean.TaskMutual;
 import com.ifywork.student_springboot.dao.ClassDao;
 import com.ifywork.student_springboot.dao.CourseDao;
 import com.ifywork.student_springboot.dao.UserDao;
@@ -26,6 +27,9 @@ public class WorkServiceImpl implements WorkService {
     public List<Map<String,String>> selectStuWork(String id) {
         List<Task> list = taskService.selectStuTask(id);
         List<Map<String,String>> list1 = new ArrayList<>();
+        if (list == null){
+            return null;
+        }
         for (Task task:list) {
             Map<String,String> map = new HashMap<>();
             map.put("t_name",task.getT_NAME());
@@ -53,6 +57,38 @@ public class WorkServiceImpl implements WorkService {
                 else {
                     map.put("active","已完成");
                 }
+            }
+            list1.add(map);
+        }
+        return list1;
+    }
+
+    @Override
+    public List<Map<String,String>> selectMutualWork(String id){
+        List<TaskMutual> list = taskService.selectStuMutual(id);
+        List<Map<String,String>> list1 = new ArrayList<>();
+        if (list == null){
+            return null;
+        }
+        for (TaskMutual mutual:list){
+            Map<String,String> map = new HashMap<>();
+            map.put("t_name",taskService.selectTaskNameByTaskID(mutual.getT_ID().toString()));
+            if (id.equals(mutual.getSTUDENT_ID1().toString())){
+                map.put("mutual_score",mutual.getMUTUAL_SCORE1().toString());
+            } else if (id.equals(mutual.getSTUDENT_ID2().toString())) {
+                map.put("mutual_score",mutual.getMUTUAL_SCORE3().toString());
+            } else if (id.equals(mutual.getSTUDENT_ID3().toString())) {
+                map.put("mutual_score",mutual.getMUTUAL_SCORE3().toString());
+            } else if (id.equals(mutual.getSTUDENT_ID4().toString())) {
+                map.put("mutual_score",mutual.getMUTUAL_SCORE4().toString());
+            } else {
+                map.put("mutual_score",mutual.getMUTUAL_SCORE5().toString());
+            }
+            if (map.get("mutual_score") != null){
+                map.put("active","已互评");
+            }
+            else {
+                map.put("active","未互评");
             }
             list1.add(map);
         }
