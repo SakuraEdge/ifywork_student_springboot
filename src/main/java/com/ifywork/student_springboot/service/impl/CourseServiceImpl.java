@@ -46,4 +46,32 @@ public class CourseServiceImpl implements CourseService {
         int id = userService.selectUserByUid(uid).getId();
         return  selectCourseByStudentID(id);
     }
+
+    @Override
+    public List<Course> selectCourseByTermAndYear(int studentID, String term, String year) {
+        List<MyClass> myClasses = classService.selectClassByStudentID(studentID);
+        List<Course> courses = new ArrayList<>();
+
+        for (MyClass myClass:
+                myClasses) {
+            courses.addAll(courseDao.selectCourseByTermAndYear(myClass.getId(),term,year));
+        }
+
+        return courses;
+    }
+
+    @Override
+    public List<Course> selectCourseByWord(int studentID, String word) {
+        List<MyClass> myClasses = classService.selectClassByStudentID(studentID);
+        List<Course> courses = new ArrayList<>();
+
+        for (MyClass myClass:
+                myClasses) {
+            courses.addAll(courseDao.selectCourseByWord(myClass.getId(),word));
+        }
+
+        return courses;
+    }
+
+
 }

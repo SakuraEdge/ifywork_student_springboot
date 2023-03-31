@@ -54,4 +54,31 @@ public class CourseController {
         commonResp.setMsg("成功");
         return commonResp;
     }
+
+    @PostMapping("/selectCourseByTermAndYear")
+    public CommonResp<List<Course>> selectCourseByStudentIDAndTerm(@RequestBody Map<String,String> map){
+        int id = Integer.parseInt(map.get("id"));
+        String term = map.get("term");
+        String year = map.get("year");
+
+        List<Course> courses = courseService.selectCourseByTermAndYear(id,term,year);
+        CommonResp<List<Course>> commonResp = new CommonResp<>();
+        commonResp.setResult(courses);
+        commonResp.setCode(200);
+        commonResp.setMsg("成功");
+        return commonResp;
+    }
+
+    @PostMapping("/selectCourseByWord")
+    public CommonResp<List<Course>> selectCourseByWord(@RequestBody Map<String,String> map){
+        int id = Integer.parseInt(map.get("id"));
+        String word = map.get("word");
+
+        List<Course> courses = courseService.selectCourseByWord(id,word);
+        CommonResp<List<Course>> commonResp = new CommonResp<>();
+        commonResp.setResult(courses);
+        commonResp.setCode(200);
+        commonResp.setMsg("成功");
+        return commonResp;
+    }
 }
