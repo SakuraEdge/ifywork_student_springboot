@@ -1,6 +1,7 @@
 package com.ifywork.student_springboot.controller;
 
 import com.ifywork.student_springboot.aspect.CommonResp;
+import com.ifywork.student_springboot.aspect.DataIsNull;
 import com.ifywork.student_springboot.bean.Course;
 import com.ifywork.student_springboot.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +25,8 @@ public class CourseController {
         int id = Integer.parseInt(map.get("id"));
 
         List<Course> courses = courseService.selectCourseByStudentID(id);
-        CommonResp<List<Course>> commonResp = new CommonResp<>();
-        commonResp.setResult(courses);
-        commonResp.setCode(200);
-        commonResp.setMsg("成功");
-        return commonResp;
+        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(courses);
     }
 
     @PostMapping("/selectCourseByClassID")
@@ -36,11 +34,8 @@ public class CourseController {
         int id = Integer.parseInt(map.get("id"));
 
         List<Course> courses = courseService.selectCourseByClassID(id);
-        CommonResp<List<Course>> commonResp = new CommonResp<>();
-        commonResp.setResult(courses);
-        commonResp.setCode(200);
-        commonResp.setMsg("成功");
-        return commonResp;
+        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(courses);
     }
 
     @PostMapping("/selectCourseByStudentUID")
@@ -48,11 +43,9 @@ public class CourseController {
         String uid = map.get("uid");
 
         List<Course> courses = courseService.selectCourseByStudentUID(uid);
-        CommonResp<List<Course>> commonResp = new CommonResp<>();
-        commonResp.setResult(courses);
-        commonResp.setCode(200);
-        commonResp.setMsg("成功");
-        return commonResp;
+
+        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(courses);
     }
 
     @PostMapping("/selectCourseByTermAndYear")
@@ -62,11 +55,9 @@ public class CourseController {
         String year = map.get("year");
 
         List<Course> courses = courseService.selectCourseByTermAndYear(id,term,year);
-        CommonResp<List<Course>> commonResp = new CommonResp<>();
-        commonResp.setResult(courses);
-        commonResp.setCode(200);
-        commonResp.setMsg("成功");
-        return commonResp;
+
+        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(courses);
     }
 
     @PostMapping("/selectCourseByWord")
@@ -75,10 +66,8 @@ public class CourseController {
         String word = map.get("word");
 
         List<Course> courses = courseService.selectCourseByWord(id,word);
-        CommonResp<List<Course>> commonResp = new CommonResp<>();
-        commonResp.setResult(courses);
-        commonResp.setCode(200);
-        commonResp.setMsg("成功");
-        return commonResp;
+
+        DataIsNull<List<Course>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(courses);
     }
 }

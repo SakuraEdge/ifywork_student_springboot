@@ -1,6 +1,8 @@
 package com.ifywork.student_springboot.controller;
 
 import com.ifywork.student_springboot.aspect.CommonResp;
+import com.ifywork.student_springboot.aspect.DataIsNull;
+import com.ifywork.student_springboot.bean.Course;
 import com.ifywork.student_springboot.bean.Task;
 import com.ifywork.student_springboot.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,8 @@ public class TaskController {
 
         List<Task> list = taskService.selectTaskByClassName(name);
 
-        CommonResp<List<Task>> commonResp = new CommonResp<>();
-        commonResp.setResult(list);
-        commonResp.setCode(200);
-
-        return commonResp;
+        DataIsNull<List<Task>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(list);
     }
 
     @PostMapping("/selectStuTask")
@@ -35,11 +34,8 @@ public class TaskController {
 
         List<Task> list = taskService.selectStuTask(id);
 
-        CommonResp<List<Task>> commonResp = new CommonResp<>();
-        commonResp.setCode(200);
-        commonResp.setResult(list);
-
-        return commonResp;
+        DataIsNull<List<Task>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(list);
     }
 
 }

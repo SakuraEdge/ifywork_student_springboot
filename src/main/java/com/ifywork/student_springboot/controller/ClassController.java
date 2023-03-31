@@ -1,6 +1,8 @@
 package com.ifywork.student_springboot.controller;
 
 import com.ifywork.student_springboot.aspect.CommonResp;
+import com.ifywork.student_springboot.aspect.DataIsNull;
+import com.ifywork.student_springboot.bean.Course;
 import com.ifywork.student_springboot.bean.MyClass;
 import com.ifywork.student_springboot.service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +32,8 @@ public class ClassController {
         int id = Integer.parseInt(sid);
 
         List<MyClass> myClass = classService.selectClassByStudentID(id);
-        CommonResp<List<MyClass>> commonResp = new CommonResp<>();
-        commonResp.setResult(myClass);
-        commonResp.setCode(200);
-        commonResp.setMsg("成功");
-        return commonResp;
+
+        DataIsNull<List<MyClass>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(myClass);
     }
 }
