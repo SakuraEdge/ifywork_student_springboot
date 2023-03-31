@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface ClassDao {
 
-    @Select("select * from class where id = (select class_id from class_student where student_id = ${id}) ;")
+    @Select("select * from class where id = any(select class_id from class_student where student_id = ${id}) ;")
     List<MyClass> selectClassByStudentID(@Param("id") int id);
 
     @Select("select CLASS_NAME from class where id = #{id}")
