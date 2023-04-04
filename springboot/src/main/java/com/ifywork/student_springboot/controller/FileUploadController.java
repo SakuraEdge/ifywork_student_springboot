@@ -3,34 +3,42 @@ package com.ifywork.student_springboot.controller;
 
 import com.ifywork.student_springboot.aspect.CommonResp;
 import com.ifywork.student_springboot.aspect.DataIsNull;
+import com.ifywork.student_springboot.service.TaskService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 public class FileUploadController {
-    private String fileSavePath = "E:\\Test";
+    private String filePath = "E:\\Test\\";
 
-    @RequestMapping("/uploads")
-    public CommonResp<List<String>> upload(MultipartFile[] uploadFiles, HttpServletRequest req) throws IOException {
+    @Autowired
+    TaskService taskService;
+
+    @RequestMapping("/uploadsWork")
+    public CommonResp<List<String>> upload(MultipartFile[] uploadFiles, String studentID,String taskID) throws IOException {
         DataIsNull<String> dataIsNull = new DataIsNull<String>();
-        return dataIsNull.listIsNull(uoload(uploadFiles));
+
+        String fileSavePath = filePath + "studentID_" + studentID + "_" + "taskID_" + taskID + "\\";
+        taskService.updateTaskFilePath(taskID,fileSavePath);
+        Files.createDirectories(Paths.get(fileSavePath));
+        return dataIsNull.listIsNull(upload(uploadFiles,fileSavePath));
     }
 
     @Async
-     public List<String>  uoload(MultipartFile[] files) throws IOException {
+     public List<String>  upload(MultipartFile[] files,String fileSavePath) throws IOException {
         List<String> paths = new ArrayList<>();
         if (files.length > 0){
             for (MultipartFile file : files) {

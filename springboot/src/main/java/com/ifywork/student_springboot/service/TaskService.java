@@ -14,4 +14,6 @@ public interface TaskService {
     String selectTaskNameByTaskID(String taskID);
 
     List<TaskMutual> selectStuMutual(String id);
+
+    int updateTaskFilePath(String taskID,String filePath);
 }

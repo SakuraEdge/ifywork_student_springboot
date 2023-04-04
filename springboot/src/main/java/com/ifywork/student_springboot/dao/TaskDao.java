@@ -5,6 +5,7 @@ import com.ifywork.student_springboot.bean.TaskMutual;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -26,4 +27,6 @@ public interface TaskDao {
     @Select("select * from task_mutual where STUDENT_ID = #{id}")
     List<TaskMutual> selectStuMutual(@Param("id") String id);
 
+    @Update("update task set T_ANNEX_ADDRESS=#{filePath},T_ACTIVE='1' where id=#{id};")
+    int updateTaskFilePath(@Param("id") String id,@Param("filePath") String filePath);
 }

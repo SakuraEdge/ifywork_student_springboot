@@ -35,4 +35,9 @@ public class TaskServiceImpl implements TaskService {
         return taskDao.selectStuMutual(id);
     }
 
+    @Override
+    public int updateTaskFilePath(String taskID, String filePath) {
+        return taskDao.updateTaskFilePath(taskID,filePath);
+    }
+
 }
