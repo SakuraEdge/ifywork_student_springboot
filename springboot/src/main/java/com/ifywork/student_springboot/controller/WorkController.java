@@ -2,8 +2,6 @@ package com.ifywork.student_springboot.controller;
 
 import com.ifywork.student_springboot.aspect.CommonResp;
 import com.ifywork.student_springboot.aspect.DataIsNull;
-import com.ifywork.student_springboot.bean.User;
-import com.ifywork.student_springboot.service.UserService;
 import com.ifywork.student_springboot.service.WorkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
