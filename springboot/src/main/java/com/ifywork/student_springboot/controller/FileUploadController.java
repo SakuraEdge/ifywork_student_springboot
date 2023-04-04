@@ -28,7 +28,7 @@ public class FileUploadController {
     TaskService taskService;
 
     @RequestMapping("/uploadsWork")
-    public CommonResp<List<String>> upload(MultipartFile[] uploadFiles, String studentID,String taskID) throws IOException {
+    public CommonResp<List<String>> uploadWork(MultipartFile[] uploadFiles, String studentID,String taskID) throws IOException {
         DataIsNull<String> dataIsNull = new DataIsNull<String>();
 
         String fileSavePath = filePath + "studentID_" + studentID + "_" + "taskID_" + taskID + "\\";
