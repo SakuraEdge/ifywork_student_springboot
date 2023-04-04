@@ -22,8 +22,6 @@ import java.util.UUID;
 @RestController
 public class FileUploadController {
     private String fileSavePath = "E:\\Test";
-    ArrayList<String> mylist=new ArrayList();
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/");
 
     @RequestMapping("/uploads")
     public CommonResp<List<String>> upload(MultipartFile[] uploadFiles, HttpServletRequest req) throws IOException {
@@ -39,7 +37,7 @@ public class FileUploadController {
                 if (!file.isEmpty()){
                     String originalFilename = file.getOriginalFilename();
                     SimpleDateFormat sdf= new SimpleDateFormat("yyyyMMddHHmmss");
-                    String path = "E:\\Test\\"+ sdf.format(System.currentTimeMillis()) + "_" + originalFilename;
+                    String path = fileSavePath+ sdf.format(System.currentTimeMillis()) + "_" + originalFilename;
                     paths.add(path);
                     file.transferTo(new File(path));
                 }
