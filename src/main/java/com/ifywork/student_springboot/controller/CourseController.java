@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -69,5 +70,17 @@ public class CourseController {
 
         DataIsNull<Course> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(courses);
+    }
+
+    @PostMapping("/selectCourseNum")
+    public CommonResp<Map<String,String>> selectCourseNum(@RequestBody Map<String,String> map){
+        int id = Integer.parseInt(map.get("id"));
+
+        Map<String,String> retMap = new HashMap<>();
+        retMap.put("all",Integer.toString(courseService.selectCourseNum(id)));
+        retMap.put("online",Integer.toString(courseService.selectCourseNumByTag(id,1)));
+        retMap.put("notOnline",Integer.toString(courseService.selectCourseNumByTag(id,0)));
+        DataIsNull<Map<String,Integer>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.mapIsNull(retMap);
     }
 }

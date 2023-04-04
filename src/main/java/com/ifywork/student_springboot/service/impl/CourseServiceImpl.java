@@ -72,6 +72,22 @@ public class CourseServiceImpl implements CourseService {
 
         return courses;
     }
+    @Override
+    public int selectCourseNum(int studentID){
+        return  selectCourseByStudentID(studentID).size();
+    }
 
+    @Override
+    public int selectCourseNumByTag(int studentID,int tag){
+        List<Course> courses = selectCourseByStudentID(studentID);
 
+        int num = 0;
+        for (Course course:
+             courses) {
+            if(course.getCOURSE_ONLINE() == tag){
+                num++;
+            }
+        }
+        return num;
+    }
 }

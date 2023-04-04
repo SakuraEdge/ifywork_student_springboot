@@ -15,4 +15,8 @@ public interface CourseService {
     public List<Course> selectCourseByTermAndYear(int studentID,String term,String year);
 
     public List<Course> selectCourseByWord(int studentID,String word);
+
+    public int selectCourseNum(int studentID);
+
+    public int selectCourseNumByTag(int studentID,int tag);
 }

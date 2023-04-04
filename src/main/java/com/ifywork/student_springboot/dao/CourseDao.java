@@ -19,8 +19,8 @@ public interface CourseDao {
 
     @Select("select * from course where id = any(select course_id from class_course where class_id = ${id}) and term = #{term}" +
             "and year = #{year}")
-    List<Course> selectCourseByTermAndYear(@Param("id")int id,@Param("term") String term,@Param("year") String year);
+    List<Course> selectCourseByTermAndYear(@Param("id") int id, @Param("term") String term, @Param("year") String year);
 
     @Select("select * from course where id = any(select course_id from class_course where class_id = ${id}) and course_name like '%${word}%'")
-    List<Course> selectCourseByWord(@Param("id")int id,@Param("word") String word);
+    List<Course> selectCourseByWord(@Param("id") int id, @Param("word") String word);
 }
