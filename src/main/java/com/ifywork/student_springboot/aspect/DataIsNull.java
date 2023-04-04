@@ -47,5 +47,20 @@ public class DataIsNull<T> {
         return commonResp;
     }
 
+    public CommonResp<Map<String,String>> mapIsNull(Map<String,String> data){
+        CommonResp<Map<String,String>> commonResp = new CommonResp<>();
+        commonResp.setResult(data);
+        if (data.size() == 0){
+            commonResp.setCode(300);
+            commonResp.setResult(null);
+            commonResp.setMsg("没有数据");
+        }
+        else {
+            commonResp.setCode(200);
+            commonResp.setMsg("成功");
+        }
+        return commonResp;
+    }
+
 
 }
