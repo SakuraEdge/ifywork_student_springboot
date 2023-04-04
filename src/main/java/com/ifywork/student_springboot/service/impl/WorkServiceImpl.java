@@ -67,17 +67,7 @@ public class WorkServiceImpl implements WorkService {
         for (TaskMutual mutual:list){
             Map<String,String> map = new HashMap<>();
             map.put("t_name",taskService.selectTaskNameByTaskID(mutual.getT_ID().toString()));
-            if (id.equals(mutual.getSTUDENT_ID1().toString())){
-                map.put("mutual_score",mutual.getMUTUAL_SCORE1().toString());
-            } else if (id.equals(mutual.getSTUDENT_ID2().toString())) {
-                map.put("mutual_score",mutual.getMUTUAL_SCORE3().toString());
-            } else if (id.equals(mutual.getSTUDENT_ID3().toString())) {
-                map.put("mutual_score",mutual.getMUTUAL_SCORE3().toString());
-            } else if (id.equals(mutual.getSTUDENT_ID4().toString())) {
-                map.put("mutual_score",mutual.getMUTUAL_SCORE4().toString());
-            } else {
-                map.put("mutual_score",mutual.getMUTUAL_SCORE5().toString());
-            }
+            map.put("mutual_score",mutual.getMUTUAL_SCORE().toString());
             if (map.get("mutual_score") != null){
                 map.put("active","已互评");
             }

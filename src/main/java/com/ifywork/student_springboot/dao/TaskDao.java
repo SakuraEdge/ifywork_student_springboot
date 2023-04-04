@@ -23,7 +23,7 @@ public interface TaskDao {
     @Select("select T_NAME from task where ID = #{taskID}")
     String selectTaskNameByTaskID(@Param("taskID") String taskID);
 
-    @Select("select * from task_mutual where STUDENT_ID1 = #{id} or STUDENT_ID2 = #{id} or STUDENT_ID3 = #{id} or STUDENT_ID4 = #{id} or STUDENT_ID5 = #{id}")
+    @Select("select * from task_mutual where STUDENT_ID = #{id}")
     List<TaskMutual> selectStuMutual(@Param("id") String id);
 
 }

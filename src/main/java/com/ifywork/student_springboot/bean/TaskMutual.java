@@ -104,83 +104,19 @@ public class TaskMutual implements Serializable{
         this.T_ID = T_ID;
     }
     /** 互评人id一;外键，连接user表id */
-    public Integer getSTUDENT_ID1(){
+    public Integer getSTUDENT_ID(){
         return this.STUDENT_ID1;
     }
     /** 互评人id一;外键，连接user表id */
     public void setSTUDENT_ID1(Integer STUDENT_ID1){
         this.STUDENT_ID1 = STUDENT_ID1;
     }
-    /** 互评人id二;外键，连接user表id */
-    public Integer getSTUDENT_ID2(){
-        return this.STUDENT_ID2;
-    }
-    /** 互评人id二;外键，连接user表id */
-    public void setSTUDENT_ID2(Integer STUDENT_ID2){
-        this.STUDENT_ID2 = STUDENT_ID2;
-    }
-    /** 互评人id三;外键，连接user表id */
-    public Integer getSTUDENT_ID3(){
-        return this.STUDENT_ID3;
-    }
-    /** 互评人id三;外键，连接user表id */
-    public void setSTUDENT_ID3(Integer STUDENT_ID3){
-        this.STUDENT_ID3 = STUDENT_ID3;
-    }
-    /** 互评人id四;外键，连接user表id */
-    public Integer getSTUDENT_ID4(){
-        return this.STUDENT_ID4;
-    }
-    /** 互评人id四;外键，连接user表id */
-    public void setSTUDENT_ID4(Integer STUDENT_ID4){
-        this.STUDENT_ID4 = STUDENT_ID4;
-    }
-    /** 互评人id五;外键，连接user表id */
-    public Integer getSTUDENT_ID5(){
-        return this.STUDENT_ID5;
-    }
-    /** 互评人id五;外键，连接user表id */
-    public void setSTUDENT_ID5(Integer STUDENT_ID5){
-        this.STUDENT_ID5 = STUDENT_ID5;
-    }
-    /** 互评成绩一 */
-    public Integer getMUTUAL_SCORE1(){
+    /** 互评成绩 */
+    public Integer getMUTUAL_SCORE(){
         return this.MUTUAL_SCORE1;
     }
-    /** 互评成绩一 */
-    public void setMUTUAL_SCORE1(Integer MUTUAL_SCORE1){
+    /** 互评成绩 */
+    public void setMUTUAL_SCORE(Integer MUTUAL_SCORE1){
         this.MUTUAL_SCORE1 = MUTUAL_SCORE1;
-    }
-    /** 互评成绩二 */
-    public Integer getMUTUAL_SCORE2(){
-        return this.MUTUAL_SCORE2;
-    }
-    /** 互评成绩二 */
-    public void setMUTUAL_SCORE2(Integer MUTUAL_SCORE2){
-        this.MUTUAL_SCORE2 = MUTUAL_SCORE2;
-    }
-    /** 互评成绩三 */
-    public Integer getMUTUAL_SCORE3(){
-        return this.MUTUAL_SCORE3;
-    }
-    /** 互评成绩三 */
-    public void setMUTUAL_SCORE3(Integer MUTUAL_SCORE3){
-        this.MUTUAL_SCORE3 = MUTUAL_SCORE3;
-    }
-    /** 互评成绩四 */
-    public Integer getMUTUAL_SCORE4(){
-        return this.MUTUAL_SCORE4;
-    }
-    /** 互评成绩四 */
-    public void setMUTUAL_SCORE4(Integer MUTUAL_SCORE4){
-        this.MUTUAL_SCORE4 = MUTUAL_SCORE4;
-    }
-    /** 互评成绩五 */
-    public Integer getMUTUAL_SCORE5(){
-        return this.MUTUAL_SCORE5;
-    }
-    /** 互评成绩五 */
-    public void setMUTUAL_SCORE5(Integer MUTUAL_SCORE5){
-        this.MUTUAL_SCORE5 = MUTUAL_SCORE5;
     }
 }
