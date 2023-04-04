@@ -10,5 +10,7 @@ public interface UserService {
 
     User checkUser(String uid,String pwd);
 
+    String selectUserNameByID(int id);
+
     User selectUserByID(int id);
 }

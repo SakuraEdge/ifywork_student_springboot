@@ -3,6 +3,7 @@ package com.ifywork.student_springboot.service;
 import com.ifywork.student_springboot.bean.Course;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CourseService {
 
@@ -12,7 +13,7 @@ public interface CourseService {
 
     public List<Course> selectCourseByStudentUID(String uid);
 
-    public List<Course> selectCourseByTermAndYear(int studentID,String term,String year);
+    public List<Map<String,String>> selectCourseByTermAndYear(int studentID, String term, String year);
 
     public List<Course> selectCourseByWord(int studentID,String word);
 

@@ -10,13 +10,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class CourseServiceImpl implements CourseService {
 
     @Autowired
     CourseDao courseDao;
+
 
     @Autowired
     ClassService classService;
@@ -48,7 +51,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<Course> selectCourseByTermAndYear(int studentID, String term, String year) {
+    public List<Map<String,String>> selectCourseByTermAndYear(int studentID, String term, String year) {
         List<MyClass> myClasses = classService.selectClassByStudentID(studentID);
         List<Course> courses = new ArrayList<>();
 
@@ -57,7 +60,33 @@ public class CourseServiceImpl implements CourseService {
             courses.addAll(courseDao.selectCourseByTermAndYear(myClass.getId(),term,year));
         }
 
-        return courses;
+        List<Map<String,String>> list = new ArrayList<>();
+
+        for (Course course:courses) {
+            Map<String,String> map1 = new HashMap<>();
+            map1.put("courseName",course.getCOURSE_NAME());
+            map1.put("mainTeacher",userService.selectUserNameByID(Integer.parseInt(course.getTEACHER_MAIN_ID())));
+            if (course.getTEACHER_ASSIST_ID()!=null){
+                map1.put("assistTeacher",userService.selectUserNameByID(Integer.parseInt(course.getTEACHER_ASSIST_ID())));
+            }
+            else{
+                map1.put("assistTeacher",null);
+            }
+            map1.put("time",null);
+            if (course.getCOURSE_ONLINE() == 0){
+                map1.put("type","面授课");
+                map1.put("code", null);
+            }
+            else{
+                map1.put("type","直播课");
+                map1.put("code", course.getONLINE_CODE());
+            }
+
+            list.add(map1);
+        }
+
+
+        return list;
     }
 
     @Override

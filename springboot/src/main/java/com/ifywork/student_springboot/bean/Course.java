@@ -57,7 +57,11 @@ public class Course implements Serializable{
 
     private String DATA_SYN;
 
+    private String ONLINE_CODE;
+
     private String COURSE_CODE;
+
+
     /** 创建人 */
     public String getCREATED_BY(){
         return this.CREATED_BY;
@@ -143,6 +147,14 @@ public class Course implements Serializable{
     /** 助教老师id;使用","分割 */
     public void setTEACHER_ASSIST_ID(String TEACHER_ASSIST_ID){
         this.TEACHER_ASSIST_ID = TEACHER_ASSIST_ID;
+    }
+
+    public String getONLINE_CODE() {
+        return ONLINE_CODE;
+    }
+
+    public void setONLINE_CODE(String ONLINE_CODE) {
+        this.ONLINE_CODE = ONLINE_CODE;
     }
 
     public Integer getCOURSE_ONLINE() {

@@ -4,12 +4,14 @@ import com.ifywork.student_springboot.aspect.CommonResp;
 import com.ifywork.student_springboot.aspect.DataIsNull;
 import com.ifywork.student_springboot.bean.Course;
 import com.ifywork.student_springboot.service.CourseService;
+import com.ifywork.student_springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,9 @@ public class CourseController {
 
     @Autowired
     CourseService courseService;
+
+    @Autowired
+    UserService service;
 
     @PostMapping("/selectCourseByStudentID")
     public CommonResp<List<Course>> selectCourseByStudentID(@RequestBody Map<String,String> map){
@@ -50,15 +55,17 @@ public class CourseController {
     }
 
     @PostMapping("/selectCourseByTermAndYear")
-    public CommonResp<List<Course>> selectCourseByStudentIDAndTerm(@RequestBody Map<String,String> map){
+    public CommonResp<List<Map<String,String>>> selectCourseByStudentIDAndTerm(@RequestBody Map<String,String> map){
         int id = Integer.parseInt(map.get("id"));
         String term = map.get("term");
         String year = map.get("year");
 
-        List<Course> courses = courseService.selectCourseByTermAndYear(id,term,year);
+        List<Map<String,String>> courses = courseService.selectCourseByTermAndYear(id,term,year);
 
-        DataIsNull<Course> dataIsNull = new DataIsNull<>();
+
+        DataIsNull<Map<String,String>> dataIsNull = new DataIsNull<>();
         return dataIsNull.listIsNull(courses);
+
     }
 
     @PostMapping("/selectCourseByWord")

@@ -20,4 +20,5 @@ public interface UserDao {
 
     @Select("select U_NAME from user where ID = #{id}")
     String selectNameById(@Param("id") Integer id);
+
 }

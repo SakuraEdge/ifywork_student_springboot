@@ -13,29 +13,17 @@ public class TaskMutual implements Serializable{
     /** 更新时间 */
     private Date UPDATED_TIME ;
     /** 主键 */
+
+    private String COMMENT;
     private Integer id ;
     /** 任务id;外键，连接task表id */
     private Integer T_ID ;
     /** 互评人id一;外键，连接user表id */
     private Integer STUDENT_ID1 ;
-    /** 互评人id二;外键，连接user表id */
-    private Integer STUDENT_ID2 ;
-    /** 互评人id三;外键，连接user表id */
-    private Integer STUDENT_ID3 ;
-    /** 互评人id四;外键，连接user表id */
-    private Integer STUDENT_ID4 ;
-    /** 互评人id五;外键，连接user表id */
-    private Integer STUDENT_ID5 ;
+
+
     /** 互评成绩一 */
     private Integer MUTUAL_SCORE1 ;
-    /** 互评成绩二 */
-    private Integer MUTUAL_SCORE2 ;
-    /** 互评成绩三 */
-    private Integer MUTUAL_SCORE3 ;
-    /** 互评成绩四 */
-    private Integer MUTUAL_SCORE4 ;
-    /** 互评成绩五 */
-    private Integer MUTUAL_SCORE5 ;
 
     private String DELETED;
 
@@ -119,4 +107,7 @@ public class TaskMutual implements Serializable{
     public void setMUTUAL_SCORE(Integer MUTUAL_SCORE1){
         this.MUTUAL_SCORE1 = MUTUAL_SCORE1;
     }
+
+    public String getCOMMENT() { return this.COMMENT; }
+    public void setCOMMENT(String COMMENT) { this.COMMENT = COMMENT; }
 }
