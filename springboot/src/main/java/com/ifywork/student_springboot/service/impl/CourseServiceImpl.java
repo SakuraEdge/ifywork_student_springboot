@@ -6,6 +6,7 @@ import com.ifywork.student_springboot.dao.CourseDao;
 import com.ifywork.student_springboot.service.ClassService;
 import com.ifywork.student_springboot.service.CourseService;
 import com.ifywork.student_springboot.service.UserService;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -100,6 +101,8 @@ public class CourseServiceImpl implements CourseService {
                 map1.put("code", course.getONLINE_CODE());
             }
 
+            map1.put("className",classService.selectClassNameByCourseID(course.getId()));
+
             String status = course.getCOURSE_STATUS();
             if ("1".equals(status)){
                 map1.put("status","进行中");
@@ -107,6 +110,9 @@ public class CourseServiceImpl implements CourseService {
             else {
                 map1.put("status","未进行");
             }
+
+            map1.put("year",course.getYEAR());
+            map1.put("term",course.getTERM());
 
             list.add(map1);
         }

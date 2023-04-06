@@ -7,4 +7,6 @@ import java.util.List;
 public interface ClassService {
 
     public List<MyClass> selectClassByStudentID(int id);
+
+    public String selectClassNameByCourseID(int id);
 }

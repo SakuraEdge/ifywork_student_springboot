@@ -18,4 +18,10 @@ public class ClassServiceImpl implements ClassService {
     public List<MyClass> selectClassByStudentID(int id){
         return classDao.selectClassByStudentID(id);
     }
+
+    @Override
+    public String selectClassNameByCourseID(int id) {
+        return classDao.selectClassNameByCourseID(id);
+    }
+
 }

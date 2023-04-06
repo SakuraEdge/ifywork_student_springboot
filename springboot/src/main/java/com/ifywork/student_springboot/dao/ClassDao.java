@@ -17,4 +17,7 @@ public interface ClassDao {
 
     @Select("select CLASS_NAME from class where id = #{id}")
     String selectClassNameByID(@Param("id") int id);
+
+    @Select("select CLASS_NAME from class where id = (select class_id from class_course where course_id = #{id})")
+    String selectClassNameByCourseID(@Param("id") int id);
 }
