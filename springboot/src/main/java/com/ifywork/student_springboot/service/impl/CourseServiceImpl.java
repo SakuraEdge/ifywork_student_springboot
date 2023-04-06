@@ -100,6 +100,14 @@ public class CourseServiceImpl implements CourseService {
                 map1.put("code", course.getONLINE_CODE());
             }
 
+            String status = course.getCOURSE_STATUS();
+            if ("1".equals(status)){
+                map1.put("status","进行中");
+            }
+            else {
+                map1.put("status","未进行");
+            }
+
             list.add(map1);
         }
 

@@ -7,7 +7,7 @@ public class TaskMutual implements Serializable{
     /** 创建人 */
     private String CREATED_BY ;
     /** 创建时间 */
-    private Date CREATED_TIME ;
+    private String CREATED_TIME ;
     /** 更新人 */
     private String UPDATED_BY ;
     /** 更新时间 */
@@ -52,11 +52,11 @@ public class TaskMutual implements Serializable{
         this.CREATED_BY = CREATED_BY;
     }
     /** 创建时间 */
-    public Date getCREATED_TIME(){
+    public String getCREATED_TIME(){
         return this.CREATED_TIME;
     }
     /** 创建时间 */
-    public void setCREATED_TIME(Date CREATED_TIME){
+    public void setCREATED_TIME(String CREATED_TIME){
         this.CREATED_TIME = CREATED_TIME;
     }
     /** 更新人 */

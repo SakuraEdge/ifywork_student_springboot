@@ -67,6 +67,7 @@ public class WorkServiceImpl implements WorkService {
         for (TaskMutual mutual:list){
             Map<String,String> map = new HashMap<>();
             map.put("t_name",taskService.selectTaskNameByTaskID(mutual.getT_ID().toString()));
+            map.put("create_time", mutual.getCREATED_TIME());
             if (mutual.getMUTUAL_SCORE()!=null)
             {
                 map.put("mutual_score",mutual.getMUTUAL_SCORE().toString());
