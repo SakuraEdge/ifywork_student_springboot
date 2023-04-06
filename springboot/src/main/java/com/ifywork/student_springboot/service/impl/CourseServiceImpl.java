@@ -55,10 +55,28 @@ public class CourseServiceImpl implements CourseService {
         List<MyClass> myClasses = classService.selectClassByStudentID(studentID);
         List<Course> courses = new ArrayList<>();
 
-        for (MyClass myClass:
-                myClasses) {
-            courses.addAll(courseDao.selectCourseByTermAndYear(myClass.getId(),term,year));
+        if("0".equals(term) && "0".equals(year)){
+            for (MyClass myClass:myClasses){
+                courses.addAll(courseDao.selectCourseByNull(myClass.getId()));
+            }
         }
+        else if ("0".equals(term)) {
+            for (MyClass myClass : myClasses) {
+                courses.addAll(courseDao.selectCourseByYear(myClass.getId(), year));
+            }
+        }
+        else if ("0".equals(year)){
+            for (MyClass myClass:myClasses){
+                courses.addAll(courseDao.selectCourseByTerm(myClass.getId(),term));
+            }
+        }
+        else {
+            for (MyClass myClass:
+                    myClasses) {
+                courses.addAll(courseDao.selectCourseByTermAndYear(myClass.getId(),term,year));
+            }
+        }
+
 
         List<Map<String,String>> list = new ArrayList<>();
 

@@ -36,6 +36,12 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public Map<String, String> selectTaskInfo(String id, String classID) {
+        Map<String,String> map = new HashMap<>();
+        return null;
+    }
+
+    @Override
     public int updateTaskFilePath(String taskID, String filePath) {
         return taskDao.updateTaskFilePath(taskID,filePath);
     }

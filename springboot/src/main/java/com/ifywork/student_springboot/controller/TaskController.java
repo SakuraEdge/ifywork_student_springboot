@@ -38,4 +38,14 @@ public class TaskController {
         return dataIsNull.listIsNull(list);
     }
 
+    @PostMapping("/selectTaskInfo")
+    public CommonResp<Map<String,String>> selectTaskInfo(@RequestBody Map<String,String> map){
+        String id = map.get("id");
+        String classID = map.get("classID");
+
+        Map<String,String> maps = taskService.selectTaskInfo(id,classID);
+        return null;
+    }
+
+
 }
