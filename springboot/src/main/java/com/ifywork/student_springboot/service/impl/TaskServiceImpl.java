@@ -134,7 +134,11 @@ public class TaskServiceImpl implements TaskService {
             map.put("teacherName",userService.selectUserNameByID(task.getT_TEACHER_ID()));
             map.put("createTime",taskMutal.getCREATED_TIME());
             map.put("overTime",task.getT_TIME_OTHER());
-            map.put("score",taskMutal.getMUTUAL_SCORE().toString());
+            String str = null;
+            if(taskMutal.getMUTUAL_SCORE() != null){
+                str = taskMutal.getMUTUAL_SCORE().toString();
+            }
+            map.put("score",str);
             ret.add(map);
         }
 
