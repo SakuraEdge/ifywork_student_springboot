@@ -39,9 +39,17 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public Task selectTaskByID(String id) {
+        return taskDao.selectTaskByID(id);
+    }
+
+    @Override
     public List<TaskMutual> selectStuMutual(String id) {
         return taskDao.selectStuMutual(id);
     }
+
+    @Override
+    public  TaskMutual selectTaskMutal(String id){return  taskDao.selectTaskMutual(id);}
 
     @Override
     public List<Map<String, String>> selectTaskInfo(String id) {
@@ -109,6 +117,27 @@ public class TaskServiceImpl implements TaskService {
 
         double percent = (double)num / (double)sum * 100;
         return percent+"%";
+    }
+
+    @Override
+    public List<Map<String, String>> selectTaskMutualInfo(String studentID) {
+        List<TaskMutual> taskMutuals = selectStuMutual(studentID);
+
+        List<Map<String,String>> ret = new ArrayList<>();
+
+        for (TaskMutual taskMutal:
+             taskMutuals) {
+            Task task = selectTaskByID(taskMutal.getT_ID().toString());
+            Map<String,String> map = new HashMap<>();
+            map.put("tName",task.getT_NAME());
+            map.put("tType",task.getT_TYPE());
+            map.put("teacherName",userService.selectUserNameByID(task.getT_TEACHER_ID()));
+            map.put("createTime",taskMutal.getCREATED_TIME());
+            map.put("overTime",task.getT_TIME_OTHER());
+            ret.add(map);
+        }
+
+        return  ret;
     }
 
 }

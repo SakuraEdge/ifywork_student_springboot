@@ -14,7 +14,11 @@ public interface TaskService {
 
     String selectTaskNameByTaskID(String taskID);
 
+    Task selectTaskByID(String id);
+
     List<TaskMutual> selectStuMutual(String id);
+
+    TaskMutual selectTaskMutal(String id);
 
     List<Map<String,String>> selectTaskInfo(String id);
 
@@ -22,4 +26,5 @@ public interface TaskService {
 
     String getTaskOverPercent(String tCode);
 
+    List<Map<String,String>> selectTaskMutualInfo(String studentID);
 }
