@@ -39,12 +39,13 @@ public class TaskController {
     }
 
     @PostMapping("/selectTaskInfo")
-    public CommonResp<Map<String,String>> selectTaskInfo(@RequestBody Map<String,String> map){
+    public CommonResp<List<Map<String,String>>> selectTaskInfo(@RequestBody Map<String,String> map){
         String id = map.get("id");
-        String classID = map.get("classID");
+        List<Map<String,String>> lists = taskService.selectTaskInfo(id);
 
-        Map<String,String> maps = taskService.selectTaskInfo(id,classID);
-        return null;
+        DataIsNull<Map<String,String>> dataIsNull = new DataIsNull<>();
+
+        return dataIsNull.listIsNull(lists);
     }
 
 

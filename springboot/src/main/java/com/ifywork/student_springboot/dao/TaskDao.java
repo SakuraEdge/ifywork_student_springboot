@@ -29,4 +29,7 @@ public interface TaskDao {
 
     @Update("update task set T_ANNEX_ADDRESS=#{filePath},T_ACTIVE='1' where id=#{id};")
     int updateTaskFilePath(@Param("id") String id,@Param("filePath") String filePath);
+
+    @Select("select * from task where T_CODE=#{code}")
+    List<Task> selectTaskByCode(@Param("code")String code);
 }

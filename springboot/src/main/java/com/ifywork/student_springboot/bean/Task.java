@@ -7,12 +7,16 @@ import java.util.Date;
 public class Task implements Serializable{
     /** 创建人 */
     private String CREATED_BY ;
+
+    private String T_TIME;
+
+    private String T_TIME_OTHER;
     /** 创建时间 */
-    private Date CREATED_TIME ;
+    private String CREATED_TIME ;
     /** 更新人 */
     private String UPDATED_BY ;
     /** 更新时间 */
-    private Date UPDATED_TIME ;
+    private String UPDATED_TIME ;
     /** 主键 */
     private Integer id ;
     /** 任务发布人id;外键，连接用户表user的ID主键 */
@@ -42,6 +46,37 @@ public class Task implements Serializable{
 
     private String DELETED;
 
+    private String T_RESUBMIT;
+
+    private String T_TYPE;
+
+    private String T_CODE;
+
+
+    public String getT_CODE() {
+        return T_CODE;
+    }
+
+    public void setT_CODE(String t_CODE) {
+        T_CODE = t_CODE;
+    }
+
+    public String getT_TYPE() {
+        return T_TYPE;
+    }
+
+    public void setT_TYPE(String t_TYPE) {
+        T_TYPE = t_TYPE;
+    }
+
+    public String getT_RESUBMIT() {
+        return T_RESUBMIT;
+    }
+
+    public void setT_RESUBMIT(String t_RESUBMIT) {
+        T_RESUBMIT = t_RESUBMIT;
+    }
+
     public void setT_STUDENT_ID(Integer t_STUDENT_ID) {
         T_STUDENT_ID = t_STUDENT_ID;
     }
@@ -63,11 +98,11 @@ public class Task implements Serializable{
         this.CREATED_BY = CREATED_BY;
     }
     /** 创建时间 */
-    public Date getCREATED_TIME(){
+    public String getCREATED_TIME(){
         return this.CREATED_TIME;
     }
     /** 创建时间 */
-    public void setCREATED_TIME(Date CREATED_TIME){
+    public void setCREATED_TIME(String CREATED_TIME){
         this.CREATED_TIME = CREATED_TIME;
     }
     /** 更新人 */
@@ -78,12 +113,30 @@ public class Task implements Serializable{
     public void setUPDATED_BY(String UPDATED_BY){
         this.UPDATED_BY = UPDATED_BY;
     }
+
+    public String getT_TIME() {
+        return T_TIME;
+    }
+
+    public void setT_TIME(String t_TIME) {
+        T_TIME = t_TIME;
+    }
+
+    public String getT_TIME_OTHER() {
+        return T_TIME_OTHER;
+    }
+
+    public void setT_TIME_OTHER(String t_TIME_OTHER) {
+        T_TIME_OTHER = t_TIME_OTHER;
+    }
+
     /** 更新时间 */
-    public Date getUPDATED_TIME(){
+
+    public String getUPDATED_TIME(){
         return this.UPDATED_TIME;
     }
     /** 更新时间 */
-    public void setUPDATED_TIME(Date UPDATED_TIME){
+    public void setUPDATED_TIME(String UPDATED_TIME){
         this.UPDATED_TIME = UPDATED_TIME;
     }
     /** 主键 */

@@ -19,5 +19,7 @@ public interface CourseService {
 
     public int selectCourseNum(int studentID);
 
+    public String selectCourseNameByClassID(int id);
+
     public int selectCourseNumByTag(int studentID,int tag);
 }

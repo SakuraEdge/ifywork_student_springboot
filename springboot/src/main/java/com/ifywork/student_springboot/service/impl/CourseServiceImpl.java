@@ -139,6 +139,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public String selectCourseNameByClassID(int id) {
+        return courseDao.selectCourseNameByID(id);
+    }
+
+    @Override
     public int selectCourseNumByTag(int studentID,int tag){
         List<Course> courses = selectCourseByStudentID(studentID);
 

@@ -16,7 +16,10 @@ public interface TaskService {
 
     List<TaskMutual> selectStuMutual(String id);
 
-    Map<String,String> selectTaskInfo(String id,String classID);
+    List<Map<String,String>> selectTaskInfo(String id);
 
     int updateTaskFilePath(String taskID,String filePath);
+
+    String getTaskOverPercent(String tCode);
+
 }
