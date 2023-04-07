@@ -19,6 +19,11 @@ public class WorkController {
     @Autowired
     private WorkService workService;
 
+    /**
+     * 查询作业状态
+     * @param map id
+     * @return list
+     */
     @PostMapping("/selectStuTaskInfo")
     public CommonResp<List<Map<String,String>>> selectStuTaskInfo(@RequestBody Map<String,String> map){
         String id = map.get("id");
@@ -27,6 +32,11 @@ public class WorkController {
         return dataIsNull.listIsNull(list);
     }
 
+    /**
+     * 查询互评状态
+     * @param map id
+     * @return list
+     */
     @PostMapping("/selectMutualInfo")
     public CommonResp<List<Map<String,String>>> selectMutualInfo(@RequestBody Map<String,String> map){
         String id = map.get("id");

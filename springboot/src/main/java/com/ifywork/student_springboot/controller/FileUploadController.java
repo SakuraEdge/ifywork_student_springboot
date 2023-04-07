@@ -27,6 +27,11 @@ public class FileUploadController {
     @Autowired
     TaskService taskService;
 
+    /**
+     * 学生上传任务
+     * @param uploadFiles
+     * @return List
+     */
     @RequestMapping("/uploadsWork")
     public CommonResp<List<String>> uploadWork(MultipartFile[] uploadFiles, String studentID,String taskID) throws IOException {
         DataIsNull<String> dataIsNull = new DataIsNull<String>();

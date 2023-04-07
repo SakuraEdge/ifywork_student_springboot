@@ -18,6 +18,11 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
+    /**
+     * 通过课程名查询该课程下的任务
+     * @param map
+     * @return List
+     */
     @PostMapping("/selectTaskByCourseName")
     public CommonResp<List<Task>> selectTaskByClassID(@RequestBody Map<String,String> map){
         String name = map.get("courseName");
@@ -28,6 +33,11 @@ public class TaskController {
         return dataIsNull.listIsNull(list);
     }
 
+    /**
+     * 通过学生ID查询该学生下的任务
+     * @param map
+     * @return List
+     */
     @PostMapping("/selectStuTask")
     public CommonResp<List<Task>> selectStuTask(@RequestBody Map<String,String> map){
         String id = map.get("id");
@@ -38,6 +48,11 @@ public class TaskController {
         return dataIsNull.listIsNull(list);
     }
 
+    /**
+     * 通过学生ID查询该学生下的任务信息
+     * @param map
+     * @return List
+     */
     @PostMapping("/selectTaskInfo")
     public CommonResp<List<Map<String,String>>> selectTaskInfo(@RequestBody Map<String,String> map){
         String id = map.get("id");

@@ -26,6 +26,11 @@ public class CourseController {
     @Autowired
     UserService service;
 
+    /**
+     * 通过学生ID查询该学生所在的所有课程
+     * @param map
+     * @return List
+     */
     @PostMapping("/selectCourseByStudentID")
     public CommonResp<List<Course>> selectCourseByStudentID(@RequestBody Map<String,String> map){
         int id = Integer.parseInt(map.get("id"));
@@ -35,6 +40,11 @@ public class CourseController {
         return dataIsNull.listIsNull(courses);
     }
 
+    /**
+     * 通过班级ID查询该班级下所有课程
+     * @param map
+     * @return List
+     */
     @PostMapping("/selectCourseByClassID")
     public CommonResp<List<Course>> selectCourseByClassID(@RequestBody Map<String,String> map){
         int id = Integer.parseInt(map.get("id"));
@@ -44,6 +54,11 @@ public class CourseController {
         return dataIsNull.listIsNull(courses);
     }
 
+    /**
+     * 通过学生UID查询该学生所有课程
+     * @param map
+     * @return List
+     */
     @PostMapping("/selectCourseByStudentUID")
     public CommonResp<List<Course>> selectCourseByStudentUID(@RequestBody Map<String,String> map){
         String uid = map.get("uid");
@@ -54,6 +69,11 @@ public class CourseController {
         return dataIsNull.listIsNull(courses);
     }
 
+    /**
+     * 通过学生ID与学年筛选该学生课程
+     * @param map
+     * @return List
+     */
     @PostMapping("/selectCourseByTermAndYear")
     public CommonResp<List<Map<String,String>>> selectCourseByStudentIDAndTerm(@RequestBody Map<String,String> map){
         int id = Integer.parseInt(map.get("id"));
@@ -68,6 +88,11 @@ public class CourseController {
 
     }
 
+    /**
+     * 通过学生ID与关键词查询该学生课程
+     * @param map
+     * @return List
+     */
     @PostMapping("/selectCourseByWord")
     public CommonResp<List<Course>> selectCourseByWord(@RequestBody Map<String,String> map){
         int id = Integer.parseInt(map.get("id"));

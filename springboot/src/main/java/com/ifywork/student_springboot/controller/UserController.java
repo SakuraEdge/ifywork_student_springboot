@@ -32,6 +32,11 @@ public class UserController {
         return dataIsNull.noIsNull(user);
     }
 
+    /**
+     * 登录查询
+     * @param map uid
+     * @return User
+     */
     @PostMapping("/checkUserLogin")
     public CommonResp<User> checkUserLogin(@RequestBody Map<String,String> map){
         String uid = map.get("uid");
