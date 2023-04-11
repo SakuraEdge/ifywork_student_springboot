@@ -29,6 +29,11 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public List<Task> selectTaskByCourseID(String id,String cid) {
+        return taskDao.selectTaskByCourseID(id,cid);
+    }
+
+    @Override
     public List<Task> selectStuTask(String id) {
         return taskDao.selectStuTask(id);
     }
@@ -55,16 +60,28 @@ public class TaskServiceImpl implements TaskService {
     public List<Map<String, String>> selectTaskInfo(String id) {
         List<Map<String,String>> list = new ArrayList<>();
 
-
         List<Task> tasks = selectStuTask(id);
 
+        return getMaps(list, tasks);
+    }
+
+    @Override
+    public List<Map<String, String>> selectTaskInfoByCourseID(String id, String cid) {
+        List<Map<String,String>> list = new ArrayList<>();
+
+        List<Task> tasks = selectTaskByCourseID(id,cid);
+
+        return getMaps(list, tasks);
+    }
+
+    private List<Map<String, String>> getMaps(List<Map<String, String>> list, List<Task> tasks) {
         for (Task task:tasks){
             Map<String,String> map = new HashMap<>();
             map.put("course",courseService.selectCourseNameByClassID(task.getT_COURSE_ID()));
             map.put("tName",task.getT_NAME());
             map.put("createTime",task.getCREATED_TIME());
             map.put("teacher",userService.selectUserNameByID(task.getT_TEACHER_ID()));
-            map.put("endTime",task.getT_TIME());
+            map.put("endTime",task.getT_SUBMIT_TIME());
             map.put("tCode",task.getT_CODE());
 
             map.put("percent",getTaskOverPercent(task.getT_CODE()));

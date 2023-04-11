@@ -16,6 +16,10 @@ public interface TaskDao {
 
     @Select("select * from task t,class c where c.CLASS_NAME = #{cname} group by T_NAME")
     List<Task> selectTaskByClassName(@Param("cname") String className);
+
+    @Select("select * from task t where T_COURSE_ID = #{cid} and T_STUDENT_ID = #{id} group by T_NAME")
+    List<Task> selectTaskByCourseID(@Param("id")String id,@Param("cid") String cid);
+
     @Select("select * from task where id = #{id}")
     Task selectTaskByID(@Param("id") String id);
 

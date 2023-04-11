@@ -83,6 +83,7 @@ public class CourseServiceImpl implements CourseService {
 
         for (Course course:courses) {
             Map<String,String> map1 = new HashMap<>();
+            map1.put("id",course.getId().toString());
             map1.put("courseName",course.getCOURSE_NAME());
             map1.put("mainTeacher",userService.selectUserNameByID(Integer.parseInt(course.getTEACHER_MAIN_ID())));
             if (course.getTEACHER_ASSIST_ID()!=null){

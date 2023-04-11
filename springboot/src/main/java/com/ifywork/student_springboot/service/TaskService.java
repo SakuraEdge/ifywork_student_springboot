@@ -8,9 +8,12 @@ import java.util.Map;
 
 public interface TaskService {
 
-    List<Task> selectTaskByClassName(String cid);
+    List<Task> selectTaskByClassName(String cname);
+
+    List<Task> selectTaskByCourseID(String id,String cid);
 
     List<Task> selectStuTask(String uid);
+
 
     String selectTaskNameByTaskID(String taskID);
 
@@ -21,6 +24,8 @@ public interface TaskService {
     TaskMutual selectTaskMutal(String id);
 
     List<Map<String,String>> selectTaskInfo(String id);
+
+    List<Map<String,String>> selectTaskInfoByCourseID(String id,String courseID);
 
     int updateTaskFilePath(String taskID,String filePath);
 
