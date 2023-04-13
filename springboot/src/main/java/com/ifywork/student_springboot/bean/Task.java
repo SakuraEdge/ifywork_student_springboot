@@ -8,7 +8,7 @@ public class Task implements Serializable{
     /** 创建人 */
     private String CREATED_BY ;
 
-    private String T_TIME;
+    private String T_SUBMIT_TIME;
 
     private String T_TIME_OTHER;
     /** 创建时间 */
@@ -114,12 +114,12 @@ public class Task implements Serializable{
         this.UPDATED_BY = UPDATED_BY;
     }
 
-    public String getT_TIME() {
-        return T_TIME;
+    public String getT_SUBMIT_TIME() {
+        return T_SUBMIT_TIME;
     }
 
-    public void setT_TIME(String t_TIME) {
-        T_TIME = t_TIME;
+    public void setT_SUBMIT_TIME(String t_TIME) {
+        T_SUBMIT_TIME = t_TIME;
     }
 
     public String getT_TIME_OTHER() {

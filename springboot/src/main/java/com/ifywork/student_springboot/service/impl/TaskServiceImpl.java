@@ -123,39 +123,26 @@ public class TaskServiceImpl implements TaskService {
     public List<Map<String, String>> selectTaskMutualInfo(String studentID) {
         List<TaskMutual> taskMutuals = selectStuMutual(studentID);
 
-        List<Map<String, String>> ret = new ArrayList<>();
+        List<Map<String,String>> ret = new ArrayList<>();
 
-        for (TaskMutual taskMutal :
-                taskMutuals) {
+        for (TaskMutual taskMutal:
+             taskMutuals) {
             Task task = selectTaskByID(taskMutal.getT_ID().toString());
-            Map<String, String> map = new HashMap<>();
-            map.put("tName", task.getT_NAME());
-            map.put("tType", task.getT_TYPE());
-            map.put("teacherName", userService.selectUserNameByID(task.getT_TEACHER_ID()));
-            map.put("createTime", taskMutal.getCREATED_TIME());
-            map.put("overTime", task.getT_TIME_OTHER());
+            Map<String,String> map = new HashMap<>();
+            map.put("tName",task.getT_NAME());
+            map.put("tType",task.getT_TYPE());
+            map.put("teacherName",userService.selectUserNameByID(task.getT_TEACHER_ID()));
+            map.put("createTime",taskMutal.getCREATED_TIME());
+            map.put("overTime",task.getT_TIME_OTHER());
             String str = null;
-            if (taskMutal.getMUTUAL_SCORE() != null) {
+            if(taskMutal.getMUTUAL_SCORE() != null){
                 str = taskMutal.getMUTUAL_SCORE().toString();
             }
-            map.put("score", str);
+            map.put("score",str);
             ret.add(map);
         }
 
-        return ret;
+        return  ret;
     }
 
-    @Override
-    public Map<String,String> selectTaskByTCode(String tCode) {
-        Task task = taskDao.selectTaskByTCode(tCode);
-
-        Map<String,String> map = new HashMap<>();
-
-        map.put("name",task.getT_NAME());
-        map.put("teacherName",userService.selectUserNameByID(task.getT_TEACHER_ID()));
-        map.put("courseName",courseService.selectCourseNameByClassID(task.getT_COURSE_ID()));
-        map.put("createTime",task.getCREATED_TIME());
-
-        return map;
-    }
 }
