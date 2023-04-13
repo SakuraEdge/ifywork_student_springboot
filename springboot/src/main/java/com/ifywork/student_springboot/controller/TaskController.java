@@ -72,4 +72,14 @@ public class TaskController {
 
         return dataIsNull.listIsNull(lists);
     }
+
+    @PostMapping("/selectTaskByTCode")
+    public CommonResp<List<Map<String,String>>> selectTaskByTCode(@RequestBody Map<String,String> map){
+        String id = map.get("id");
+        List<Map<String,String>> lists = taskService.selectTaskMutualInfo(id);
+
+        DataIsNull<Map<String,String>> dataIsNull = new DataIsNull<>();
+
+        return dataIsNull.listIsNull(lists);
+    }
 }

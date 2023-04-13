@@ -10,6 +10,8 @@ public interface TaskService {
 
     List<Task> selectTaskByClassName(String cid);
 
+    Map<String,String>  selectTaskByTCode(String tCode);
+
     List<Task> selectStuTask(String uid);
 
     String selectTaskNameByTaskID(String taskID);
