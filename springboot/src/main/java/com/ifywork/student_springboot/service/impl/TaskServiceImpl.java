@@ -34,11 +34,6 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Map<String, String> selectTaskByTCode(String tCode) {
-        return null;
-    }
-
-    @Override
     public List<Task> selectStuTask(String id) {
         return taskDao.selectStuTask(id);
     }
@@ -161,8 +156,18 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Map<String, String>> selectTaskByCode(String studentID) {
-        return null;
-    }
+    public Map<String, String> selectTaskByTCode(String studentID, String tCode) {
+        Task task = taskDao.selectTaskByTCode(tCode,studentID);
+        Map<String,String> map = new HashMap<>();
 
+        map.put("name",task.getT_NAME());
+        map.put("teacherName",userService.selectUserNameByID(task.getT_TEACHER_ID()));
+        map.put("speakName",task.getT_TEACHER_SPEAK_NAME());
+        map.put("courseName", courseService.selectCourseNameByID(task.getT_COURSE_ID()));
+        map.put("releaseTime",task.getT_RELEASE_TIME());
+        map.put("submitTime",task.getT_SUBMIT_TIME());
+        map.put("active",task.getT_ACTIVE());
+        map.put("overPercent",getTaskOverPercent(tCode));
+        return map;
+    }
 }

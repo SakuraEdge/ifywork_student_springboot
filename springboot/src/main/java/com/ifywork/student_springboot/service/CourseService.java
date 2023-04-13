@@ -7,6 +7,7 @@ import java.util.Map;
 
 public interface CourseService {
 
+    public String selectCourseNameByID(int id);
     public List<Course> selectCourseByStudentID(int id);
 
     public List<Course> selectCourseByClassID(int id);

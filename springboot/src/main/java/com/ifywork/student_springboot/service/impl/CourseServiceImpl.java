@@ -29,6 +29,11 @@ public class CourseServiceImpl implements CourseService {
     UserService userService;
 
     @Override
+    public String selectCourseNameByID(int id) {
+        return courseDao.selectCourseNameByID(id);
+    }
+
+    @Override
     public List<Course> selectCourseByStudentID(int id) {
         List<MyClass> myClasses = classService.selectClassByStudentID(id);
         List<Course> courses = new ArrayList<>();

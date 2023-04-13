@@ -22,8 +22,8 @@ public interface TaskDao {
 
     @Select("select * from task where id = #{id}")
     Task selectTaskByID(@Param("id") String id);
-    @Select("select * from task where T_CODE = #{tCode}")
-    Task selectTaskByTCode(@Param("tCode") String tCode);
+    @Select("select * from task where T_CODE = #{tCode} and T_STUDENT_ID = #{studentID}")
+    Task selectTaskByTCode(@Param("tCode") String tCode,@Param("studentID") String studentID);
     @Select("select * from task t,user u where u.ID = #{id} and u.ID = t.T_STUDENT_ID")
     List<Task> selectStuTask(@Param("id") String id);
 

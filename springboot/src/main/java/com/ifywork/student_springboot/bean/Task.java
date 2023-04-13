@@ -52,6 +52,36 @@ public class Task implements Serializable{
 
     private String T_CODE;
 
+    public  String T_RELEASE_TIME;
+
+    public String getT_RELEASE_TIME() {
+        return T_RELEASE_TIME;
+    }
+
+    public void setT_RELEASE_TIME(String t_RELEASE_TIME) {
+        T_RELEASE_TIME = t_RELEASE_TIME;
+    }
+
+    public String getT_TEACHER_SPEAK_NAME() {
+        return T_TEACHER_SPEAK_NAME;
+    }
+
+    public void setT_TEACHER_SPEAK_NAME(String t_TEACHER_SPEAK_NAME) {
+        T_TEACHER_SPEAK_NAME = t_TEACHER_SPEAK_NAME;
+    }
+
+    public String getT_TEACHER_SPEAK_STUDENTNAME() {
+        return T_TEACHER_SPEAK_STUDENTNAME;
+    }
+
+    public void setT_TEACHER_SPEAK_STUDENTNAME(String t_TEACHER_SPEAK_STUDENTNAME) {
+        T_TEACHER_SPEAK_STUDENTNAME = t_TEACHER_SPEAK_STUDENTNAME;
+    }
+
+    private String T_TEACHER_SPEAK_NAME;
+
+    private String T_TEACHER_SPEAK_STUDENTNAME;
+
 
     public String getT_CODE() {
         return T_CODE;
