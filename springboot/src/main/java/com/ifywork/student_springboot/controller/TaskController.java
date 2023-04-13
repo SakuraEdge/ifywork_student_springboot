@@ -63,6 +63,17 @@ public class TaskController {
         return dataIsNull.listIsNull(lists);
     }
 
+    @PostMapping("/selectTaskInfoByCourseID")
+    public CommonResp<List<Map<String,String>>> selectTaskInfoByCourseID(@RequestBody Map<String,String> map){
+        String id = map.get("id");
+        String courseID = map.get("cid");
+        List<Map<String,String>> lists = taskService.selectTaskInfoByCourseID(id,courseID);
+
+        DataIsNull<Map<String,String>> dataIsNull = new DataIsNull<>();
+
+        return dataIsNull.listIsNull(lists);
+    }
+
     @PostMapping("/selectTaskMutualInfo")
     public CommonResp<List<Map<String,String>>> selectTaskMutualInfo(@RequestBody Map<String,String> map){
         String id = map.get("id");
@@ -72,4 +83,6 @@ public class TaskController {
 
         return dataIsNull.listIsNull(lists);
     }
+
+    
 }

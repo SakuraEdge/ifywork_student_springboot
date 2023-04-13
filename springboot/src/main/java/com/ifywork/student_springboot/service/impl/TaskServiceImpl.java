@@ -29,6 +29,16 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public List<Task> selectTaskByCourseID(String id, String cid) {
+        return null;
+    }
+
+    @Override
+    public Map<String, String> selectTaskByTCode(String tCode) {
+        return null;
+    }
+
+    @Override
     public List<Task> selectStuTask(String id) {
         return taskDao.selectStuTask(id);
     }
@@ -100,6 +110,11 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public List<Map<String, String>> selectTaskInfoByCourseID(String id, String courseID) {
+        return null;
+    }
+
+    @Override
     public int updateTaskFilePath(String taskID, String filePath) {
         return taskDao.updateTaskFilePath(taskID,filePath);
     }
@@ -143,6 +158,11 @@ public class TaskServiceImpl implements TaskService {
         }
 
         return  ret;
+    }
+
+    @Override
+    public List<Map<String, String>> selectTaskByCode(String studentID) {
+        return null;
     }
 
 }
