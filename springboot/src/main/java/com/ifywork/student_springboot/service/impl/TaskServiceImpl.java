@@ -49,7 +49,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public  TaskMutual selectTaskMutal(String id){return  taskDao.selectTaskMutual(id);}
+    public  TaskMutual selectTaskMutual(String id){return  taskDao.selectTaskMutual(id);}
 
     @Override
     public List<Map<String, String>> selectTaskInfo(String id) {
@@ -64,7 +64,7 @@ public class TaskServiceImpl implements TaskService {
             map.put("tName",task.getT_NAME());
             map.put("createTime",task.getCREATED_TIME());
             map.put("teacher",userService.selectUserNameByID(task.getT_TEACHER_ID()));
-            map.put("endTime",task.getT_TIME());
+            map.put("endTime",task.getT_SUBMIT_TIME());
             map.put("tCode",task.getT_CODE());
 
             map.put("percent",getTaskOverPercent(task.getT_CODE()));

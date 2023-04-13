@@ -23,7 +23,7 @@ public interface TaskService {
 
     List<TaskMutual> selectStuMutual(String id);
 
-    TaskMutual selectTaskMutal(String id);
+    TaskMutual selectTaskMutual(String id);
 
     List<Map<String,String>> selectTaskInfo(String id);
 
