@@ -32,4 +32,7 @@ public interface TaskService {
     String getTaskOverPercent(String tCode);
 
     List<Map<String,String>> selectTaskMutualInfo(String studentID);
+
+    List<Map<String,String>> selectTaskByCode(String studentID);
+
 }

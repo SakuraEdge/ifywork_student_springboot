@@ -83,4 +83,11 @@ public class TaskController {
 
         return dataIsNull.listIsNull(lists);
     }
+
+    @PostMapping("/selectTaskByCode")
+    public CommonResp<List<Map<String,String>>> selectTaskByCode(@RequestBody String code){
+        List<Map<String,String>> lists = taskService.selectTaskByCode(code);
+        DataIsNull<Map<String,String>> dataIsNull = new DataIsNull<>();
+        return dataIsNull.listIsNull(lists);
+    }
 }
