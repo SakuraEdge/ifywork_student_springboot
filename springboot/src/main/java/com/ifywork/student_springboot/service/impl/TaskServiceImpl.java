@@ -160,6 +160,7 @@ public class TaskServiceImpl implements TaskService {
         Task task = taskDao.selectTaskByTCode(tCode,studentID);
         Map<String,String> map = new HashMap<>();
 
+        map.put("id",task.getId().toString());
         map.put("name",task.getT_NAME());
         map.put("teacherName",userService.selectUserNameByID(task.getT_TEACHER_ID()));
         map.put("speakName",task.getT_TEACHER_SPEAK_NAME());

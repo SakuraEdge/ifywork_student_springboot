@@ -7,5 +7,5 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://8.130.82.124:3306/ifywork?serverTimezone=UTC&useUnicode=true$characterEncoding=utf-8&useSSL=true
-    username: root
-    password: 123456
+    username: Ai
+    password: aililian
